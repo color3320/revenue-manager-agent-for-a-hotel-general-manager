@@ -1,0 +1,129 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Grand Harbour Hotel Reservations Portal" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: Grand Harbour Hotel
+        - generic [ref=e6]: Reservations Portal
+      - navigation [ref=e7]:
+        - link "Reservations" [ref=e8] [cursor=pointer]:
+          - /url: /reservations
+        - link "Reference" [ref=e9] [cursor=pointer]:
+          - /url: /reference
+        - link "Verify" [ref=e10] [cursor=pointer]:
+          - /url: /verify
+  - main [ref=e11]:
+    - generic [ref=e15]:
+      - heading "Reference tables" [level=1] [ref=e16]
+      - generic [ref=e17]:
+        - heading "room_type_lookup" [level=2] [ref=e18]
+        - table [ref=e20]:
+          - rowgroup [ref=e21]:
+            - row "space_type room_class display_name number_of_rooms" [ref=e22]:
+              - columnheader "space_type" [ref=e23]
+              - columnheader "room_class" [ref=e24]
+              - columnheader "display_name" [ref=e25]
+              - columnheader "number_of_rooms" [ref=e26]
+          - rowgroup [ref=e27]:
+            - row "KS Standard Standard King 52" [ref=e28]:
+              - cell "KS" [ref=e29]
+              - cell "Standard" [ref=e30]
+              - cell "Standard King" [ref=e31]
+              - cell "52" [ref=e32]
+            - row "TB Standard Standard Twin 20" [ref=e33]:
+              - cell "TB" [ref=e34]
+              - cell "Standard" [ref=e35]
+              - cell "Standard Twin" [ref=e36]
+              - cell "20" [ref=e37]
+            - row "EX Executive Executive King 26" [ref=e38]:
+              - cell "EX" [ref=e39]
+              - cell "Executive" [ref=e40]
+              - cell "Executive King" [ref=e41]
+              - cell "26" [ref=e42]
+      - generic [ref=e43]:
+        - heading "market_code_lookup" [level=2] [ref=e44]
+        - table [ref=e46]:
+          - rowgroup [ref=e47]:
+            - row "market_code market_name macro_group description" [ref=e48]:
+              - columnheader "market_code" [ref=e49]
+              - columnheader "market_name" [ref=e50]
+              - columnheader "macro_group" [ref=e51]
+              - columnheader "description" [ref=e52]
+          - rowgroup [ref=e53]:
+            - row "OTA Online Travel Agency Retail Third-party online channels such as Booking.com and Expedia." [ref=e54]:
+              - cell "OTA" [ref=e55]
+              - cell "Online Travel Agency" [ref=e56]
+              - cell "Retail" [ref=e57]
+              - cell "Third-party online channels such as Booking.com and Expedia." [ref=e58]
+            - row "BAR Best Available Retail Retail Direct flexible retail business." [ref=e59]:
+              - cell "BAR" [ref=e60]
+              - cell "Best Available Retail" [ref=e61]
+              - cell "Retail" [ref=e62]
+              - cell "Direct flexible retail business." [ref=e63]
+            - row "PROM Promotional Retail Retail Direct promotional and member-rate retail bookings." [ref=e64]:
+              - cell "PROM" [ref=e65]
+              - cell "Promotional Retail" [ref=e66]
+              - cell "Retail" [ref=e67]
+              - cell "Direct promotional and member-rate retail bookings." [ref=e68]
+            - row "FIT Free Independent Traveller Leisure Independent leisure demand, often direct or contracted." [ref=e69]:
+              - cell "FIT" [ref=e70]
+              - cell "Free Independent Traveller" [ref=e71]
+              - cell "Leisure" [ref=e72]
+              - cell "Independent leisure demand, often direct or contracted." [ref=e73]
+            - row "CSR Corporate Negotiated Corporate Negotiated corporate transient business." [ref=e74]:
+              - cell "CSR" [ref=e75]
+              - cell "Corporate Negotiated" [ref=e76]
+              - cell "Corporate" [ref=e77]
+              - cell "Negotiated corporate transient business." [ref=e78]
+            - row "CNR Corporate Room Nights Corporate Corporate transient business via agency or negotiated accounts." [ref=e79]:
+              - cell "CNR" [ref=e80]
+              - cell "Corporate Room Nights" [ref=e81]
+              - cell "Corporate" [ref=e82]
+              - cell "Corporate transient business via agency or negotiated accounts." [ref=e83]
+            - row "CNI Conference / Incentive Group MICE Group business tied to conferences or incentives." [ref=e84]:
+              - cell "CNI" [ref=e85]
+              - cell "Conference / Incentive Group" [ref=e86]
+              - cell "MICE" [ref=e87]
+              - cell "Group business tied to conferences or incentives." [ref=e88]
+            - row "CGR Corporate Group MICE Corporate group blocks and meetings business." [ref=e89]:
+              - cell "CGR" [ref=e90]
+              - cell "Corporate Group" [ref=e91]
+              - cell "MICE" [ref=e92]
+              - cell "Corporate group blocks and meetings business." [ref=e93]
+            - row "EVEN Event Demand MICE Demand associated with citywide or hotel-linked events." [ref=e94]:
+              - cell "EVEN" [ref=e95]
+              - cell "Event Demand" [ref=e96]
+              - cell "MICE" [ref=e97]
+              - cell "Demand associated with citywide or hotel-linked events." [ref=e98]
+            - row "SMERF SMERF Group Leisure Group Social, military, educational, religious, fraternal groups." [ref=e99]:
+              - cell "SMERF" [ref=e100]
+              - cell "SMERF Group" [ref=e101]
+              - cell "Leisure Group" [ref=e102]
+              - cell "Social, military, educational, religious, fraternal groups." [ref=e103]
+      - generic [ref=e104]:
+        - heading "channel_code_lookup" [level=2] [ref=e105]
+        - table [ref=e107]:
+          - rowgroup [ref=e108]:
+            - row "channel_code channel_name channel_group" [ref=e109]:
+              - columnheader "channel_code" [ref=e110]
+              - columnheader "channel_name" [ref=e111]
+              - columnheader "channel_group" [ref=e112]
+          - rowgroup [ref=e113]:
+            - row "WEB Web / OTA Web Digital" [ref=e114]:
+              - cell "WEB" [ref=e115]
+              - cell "Web / OTA Web" [ref=e116]
+              - cell "Digital" [ref=e117]
+            - row "REC Direct Reservations / Brand Web Direct" [ref=e118]:
+              - cell "REC" [ref=e119]
+              - cell "Direct Reservations / Brand Web" [ref=e120]
+              - cell "Direct" [ref=e121]
+            - row "EMA Email / Central Reservations Offline" [ref=e122]:
+              - cell "EMA" [ref=e123]
+              - cell "Email / Central Reservations" [ref=e124]
+              - cell "Offline" [ref=e125]
+            - row "WAL Walk-in Offline" [ref=e126]:
+              - cell "WAL" [ref=e127]
+              - cell "Walk-in" [ref=e128]
+              - cell "Offline" [ref=e129]
+  - contentinfo [ref=e13]: Synthetic dataset for the Revenue Manager Agent hackathon. Data is regenerated daily and is always forward-looking from today.
+  - alert [ref=e14]

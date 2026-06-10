@@ -1,0 +1,1541 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Grand Harbour Hotel Reservations Portal" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: Grand Harbour Hotel
+        - generic [ref=e6]: Reservations Portal
+      - navigation [ref=e7]:
+        - link "Reservations" [ref=e8] [cursor=pointer]:
+          - /url: /reservations
+        - link "Reference" [ref=e9] [cursor=pointer]:
+          - /url: /reference
+        - link "Verify" [ref=e10] [cursor=pointer]:
+          - /url: /verify
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e14]:
+        - heading "Reservations" [level=1] [ref=e15]
+        - paragraph [ref=e16]: 250 reservations · book as of 2026-06-10
+      - table [ref=e18]:
+        - rowgroup [ref=e19]:
+          - row "Reservation Arrival Departure Nights Status Market Channel Room Rooms ADR Lead" [ref=e20]:
+            - columnheader "Reservation" [ref=e21]
+            - columnheader "Arrival" [ref=e22]
+            - columnheader "Departure" [ref=e23]
+            - columnheader "Nights" [ref=e24]
+            - columnheader "Status" [ref=e25]
+            - columnheader "Market" [ref=e26]
+            - columnheader "Channel" [ref=e27]
+            - columnheader "Room" [ref=e28]
+            - columnheader "Rooms" [ref=e29]
+            - columnheader "ADR" [ref=e30]
+            - columnheader "Lead" [ref=e31]
+            - columnheader [ref=e32]
+        - rowgroup [ref=e33]:
+          - row "R0001 2026-07-23 2026-07-26 3 Reserved CSR REC KS 1 226.00 120 View →" [ref=e38]:
+            - cell "R0001" [ref=e39]
+            - cell "2026-07-23" [ref=e40]
+            - cell "2026-07-26" [ref=e41]
+            - cell "3" [ref=e42]
+            - cell "Reserved" [ref=e43]
+            - cell "CSR" [ref=e44]
+            - cell "REC" [ref=e45]
+            - cell "KS" [ref=e46]
+            - cell "1" [ref=e47]
+            - cell "226.00" [ref=e48]
+            - cell "120" [ref=e49]
+            - cell "View →" [ref=e50]:
+              - link "View →" [ref=e51] [cursor=pointer]:
+                - /url: /reservations/R0001
+          - row "R0002 2026-06-12 2026-06-14 2 Cancelled FIT REC KS 1 206.00 24 View →" [ref=e52]:
+            - cell "R0002" [ref=e53]
+            - cell "2026-06-12" [ref=e54]
+            - cell "2026-06-14" [ref=e55]
+            - cell "2" [ref=e56]
+            - cell "Cancelled" [ref=e57]
+            - cell "FIT" [ref=e58]
+            - cell "REC" [ref=e59]
+            - cell "KS" [ref=e60]
+            - cell "1" [ref=e61]
+            - cell "206.00" [ref=e62]
+            - cell "24" [ref=e63]
+            - cell "View →" [ref=e64]:
+              - link "View →" [ref=e65] [cursor=pointer]:
+                - /url: /reservations/R0002
+          - row "R0003 2026-08-19 2026-08-21 2 Reserved EVEN EMA KS 5 185.00 151 View →" [ref=e66]:
+            - cell "R0003" [ref=e67]
+            - cell "2026-08-19" [ref=e68]
+            - cell "2026-08-21" [ref=e69]
+            - cell "2" [ref=e70]
+            - cell "Reserved" [ref=e71]
+            - cell "EVEN" [ref=e72]
+            - cell "EMA" [ref=e73]
+            - cell "KS" [ref=e74]
+            - cell "5" [ref=e75]
+            - cell "185.00" [ref=e76]
+            - cell "151" [ref=e77]
+            - cell "View →" [ref=e78]:
+              - link "View →" [ref=e79] [cursor=pointer]:
+                - /url: /reservations/R0003
+          - row "R0004 2026-09-11 2026-09-14 3 Reserved CNI EMA TB 9 165.00 160 View →" [ref=e80]:
+            - cell "R0004" [ref=e81]
+            - cell "2026-09-11" [ref=e82]
+            - cell "2026-09-14" [ref=e83]
+            - cell "3" [ref=e84]
+            - cell "Reserved" [ref=e85]
+            - cell "CNI" [ref=e86]
+            - cell "EMA" [ref=e87]
+            - cell "TB" [ref=e88]
+            - cell "9" [ref=e89]
+            - cell "165.00" [ref=e90]
+            - cell "160" [ref=e91]
+            - cell "View →" [ref=e92]:
+              - link "View →" [ref=e93] [cursor=pointer]:
+                - /url: /reservations/R0004
+          - row "R0005 2026-09-21 2026-09-24 3 Reserved OTA WEB TB 1 154.00 160 View →" [ref=e94]:
+            - cell "R0005" [ref=e95]
+            - cell "2026-09-21" [ref=e96]
+            - cell "2026-09-24" [ref=e97]
+            - cell "3" [ref=e98]
+            - cell "Reserved" [ref=e99]
+            - cell "OTA" [ref=e100]
+            - cell "WEB" [ref=e101]
+            - cell "TB" [ref=e102]
+            - cell "1" [ref=e103]
+            - cell "154.00" [ref=e104]
+            - cell "160" [ref=e105]
+            - cell "View →" [ref=e106]:
+              - link "View →" [ref=e107] [cursor=pointer]:
+                - /url: /reservations/R0005
+          - row "R0006 2026-05-29 2026-06-01 3 Reserved OTA WEB KS 1 185.00 47 View →" [ref=e108]:
+            - cell "R0006" [ref=e109]
+            - cell "2026-05-29" [ref=e110]
+            - cell "2026-06-01" [ref=e111]
+            - cell "3" [ref=e112]
+            - cell "Reserved" [ref=e113]
+            - cell "OTA" [ref=e114]
+            - cell "WEB" [ref=e115]
+            - cell "KS" [ref=e116]
+            - cell "1" [ref=e117]
+            - cell "185.00" [ref=e118]
+            - cell "47" [ref=e119]
+            - cell "View →" [ref=e120]:
+              - link "View →" [ref=e121] [cursor=pointer]:
+                - /url: /reservations/R0006
+          - row "R0007 2026-06-28 2026-06-30 2 Reserved BAR REC KS 1 192.00 88 View →" [ref=e122]:
+            - cell "R0007" [ref=e123]
+            - cell "2026-06-28" [ref=e124]
+            - cell "2026-06-30" [ref=e125]
+            - cell "2" [ref=e126]
+            - cell "Reserved" [ref=e127]
+            - cell "BAR" [ref=e128]
+            - cell "REC" [ref=e129]
+            - cell "KS" [ref=e130]
+            - cell "1" [ref=e131]
+            - cell "192.00" [ref=e132]
+            - cell "88" [ref=e133]
+            - cell "View →" [ref=e134]:
+              - link "View →" [ref=e135] [cursor=pointer]:
+                - /url: /reservations/R0007
+          - row "R0008 2026-08-11 2026-08-15 4 Reserved CGR EMA KS 5 173.00 64 View →" [ref=e136]:
+            - cell "R0008" [ref=e137]
+            - cell "2026-08-11" [ref=e138]
+            - cell "2026-08-15" [ref=e139]
+            - cell "4" [ref=e140]
+            - cell "Reserved" [ref=e141]
+            - cell "CGR" [ref=e142]
+            - cell "EMA" [ref=e143]
+            - cell "KS" [ref=e144]
+            - cell "5" [ref=e145]
+            - cell "173.00" [ref=e146]
+            - cell "64" [ref=e147]
+            - cell "View →" [ref=e148]:
+              - link "View →" [ref=e149] [cursor=pointer]:
+                - /url: /reservations/R0008
+          - row "R0009 2026-08-20 2026-08-23 3 Reserved OTA WEB KS 1 185.00 118 View →" [ref=e150]:
+            - cell "R0009" [ref=e151]
+            - cell "2026-08-20" [ref=e152]
+            - cell "2026-08-23" [ref=e153]
+            - cell "3" [ref=e154]
+            - cell "Reserved" [ref=e155]
+            - cell "OTA" [ref=e156]
+            - cell "WEB" [ref=e157]
+            - cell "KS" [ref=e158]
+            - cell "1" [ref=e159]
+            - cell "185.00" [ref=e160]
+            - cell "118" [ref=e161]
+            - cell "View →" [ref=e162]:
+              - link "View →" [ref=e163] [cursor=pointer]:
+                - /url: /reservations/R0009
+          - row "R0010 2026-09-21 2026-09-22 1 Cancelled CSR EMA KS 1 211.00 152 View →" [ref=e164]:
+            - cell "R0010" [ref=e165]
+            - cell "2026-09-21" [ref=e166]
+            - cell "2026-09-22" [ref=e167]
+            - cell "1" [ref=e168]
+            - cell "Cancelled" [ref=e169]
+            - cell "CSR" [ref=e170]
+            - cell "EMA" [ref=e171]
+            - cell "KS" [ref=e172]
+            - cell "1" [ref=e173]
+            - cell "211.00" [ref=e174]
+            - cell "152" [ref=e175]
+            - cell "View →" [ref=e176]:
+              - link "View →" [ref=e177] [cursor=pointer]:
+                - /url: /reservations/R0010
+          - row "R0011 2026-07-17 2026-07-19 2 Reserved OTA WEB KS 1 188.00 98 View →" [ref=e178]:
+            - cell "R0011" [ref=e179]
+            - cell "2026-07-17" [ref=e180]
+            - cell "2026-07-19" [ref=e181]
+            - cell "2" [ref=e182]
+            - cell "Reserved" [ref=e183]
+            - cell "OTA" [ref=e184]
+            - cell "WEB" [ref=e185]
+            - cell "KS" [ref=e186]
+            - cell "1" [ref=e187]
+            - cell "188.00" [ref=e188]
+            - cell "98" [ref=e189]
+            - cell "View →" [ref=e190]:
+              - link "View →" [ref=e191] [cursor=pointer]:
+                - /url: /reservations/R0011
+          - row "R0012 2026-09-17 2026-09-18 1 Reserved PROM REC KS 1 178.00 143 View →" [ref=e192]:
+            - cell "R0012" [ref=e193]
+            - cell "2026-09-17" [ref=e194]
+            - cell "2026-09-18" [ref=e195]
+            - cell "1" [ref=e196]
+            - cell "Reserved" [ref=e197]
+            - cell "PROM" [ref=e198]
+            - cell "REC" [ref=e199]
+            - cell "KS" [ref=e200]
+            - cell "1" [ref=e201]
+            - cell "178.00" [ref=e202]
+            - cell "143" [ref=e203]
+            - cell "View →" [ref=e204]:
+              - link "View →" [ref=e205] [cursor=pointer]:
+                - /url: /reservations/R0012
+          - row "R0013 2026-09-24 2026-09-25 1 Reserved OTA WEB TB 1 157.00 160 View →" [ref=e206]:
+            - cell "R0013" [ref=e207]
+            - cell "2026-09-24" [ref=e208]
+            - cell "2026-09-25" [ref=e209]
+            - cell "1" [ref=e210]
+            - cell "Reserved" [ref=e211]
+            - cell "OTA" [ref=e212]
+            - cell "WEB" [ref=e213]
+            - cell "TB" [ref=e214]
+            - cell "1" [ref=e215]
+            - cell "157.00" [ref=e216]
+            - cell "160" [ref=e217]
+            - cell "View →" [ref=e218]:
+              - link "View →" [ref=e219] [cursor=pointer]:
+                - /url: /reservations/R0013
+          - row "R0014 2026-09-10 2026-09-11 1 Reserved CNR EMA KS 1 189.00 95 View →" [ref=e220]:
+            - cell "R0014" [ref=e221]
+            - cell "2026-09-10" [ref=e222]
+            - cell "2026-09-11" [ref=e223]
+            - cell "1" [ref=e224]
+            - cell "Reserved" [ref=e225]
+            - cell "CNR" [ref=e226]
+            - cell "EMA" [ref=e227]
+            - cell "KS" [ref=e228]
+            - cell "1" [ref=e229]
+            - cell "189.00" [ref=e230]
+            - cell "95" [ref=e231]
+            - cell "View →" [ref=e232]:
+              - link "View →" [ref=e233] [cursor=pointer]:
+                - /url: /reservations/R0014
+          - row "R0015 2026-08-18 2026-08-21 3 Reserved BAR REC EX 1 275.00 158 View →" [ref=e234]:
+            - cell "R0015" [ref=e235]
+            - cell "2026-08-18" [ref=e236]
+            - cell "2026-08-21" [ref=e237]
+            - cell "3" [ref=e238]
+            - cell "Reserved" [ref=e239]
+            - cell "BAR" [ref=e240]
+            - cell "REC" [ref=e241]
+            - cell "EX" [ref=e242]
+            - cell "1" [ref=e243]
+            - cell "275.00" [ref=e244]
+            - cell "158" [ref=e245]
+            - cell "View →" [ref=e246]:
+              - link "View →" [ref=e247] [cursor=pointer]:
+                - /url: /reservations/R0015
+          - row "R0016 2026-08-12 2026-08-15 3 Reserved BAR REC KS 1 197.00 151 View →" [ref=e248]:
+            - cell "R0016" [ref=e249]
+            - cell "2026-08-12" [ref=e250]
+            - cell "2026-08-15" [ref=e251]
+            - cell "3" [ref=e252]
+            - cell "Reserved" [ref=e253]
+            - cell "BAR" [ref=e254]
+            - cell "REC" [ref=e255]
+            - cell "KS" [ref=e256]
+            - cell "1" [ref=e257]
+            - cell "197.00" [ref=e258]
+            - cell "151" [ref=e259]
+            - cell "View →" [ref=e260]:
+              - link "View →" [ref=e261] [cursor=pointer]:
+                - /url: /reservations/R0016
+          - row "R0017 2026-09-29 2026-10-03 4 Reserved EVEN EMA TB 8 175.00 117 View →" [ref=e262]:
+            - cell "R0017" [ref=e263]
+            - cell "2026-09-29" [ref=e264]
+            - cell "2026-10-03" [ref=e265]
+            - cell "4" [ref=e266]
+            - cell "Reserved" [ref=e267]
+            - cell "EVEN" [ref=e268]
+            - cell "EMA" [ref=e269]
+            - cell "TB" [ref=e270]
+            - cell "8" [ref=e271]
+            - cell "175.00" [ref=e272]
+            - cell "117" [ref=e273]
+            - cell "View →" [ref=e274]:
+              - link "View →" [ref=e275] [cursor=pointer]:
+                - /url: /reservations/R0017
+          - row "R0018 2026-10-07 2026-10-09 2 Reserved OTA WEB TB 1 172.00 160 View →" [ref=e276]:
+            - cell "R0018" [ref=e277]
+            - cell "2026-10-07" [ref=e278]
+            - cell "2026-10-09" [ref=e279]
+            - cell "2" [ref=e280]
+            - cell "Reserved" [ref=e281]
+            - cell "OTA" [ref=e282]
+            - cell "WEB" [ref=e283]
+            - cell "TB" [ref=e284]
+            - cell "1" [ref=e285]
+            - cell "172.00" [ref=e286]
+            - cell "160" [ref=e287]
+            - cell "View →" [ref=e288]:
+              - link "View →" [ref=e289] [cursor=pointer]:
+                - /url: /reservations/R0018
+          - row "R0019 2026-10-07 2026-10-09 2 Reserved CGR EMA EX 9 233.00 130 View →" [ref=e290]:
+            - cell "R0019" [ref=e291]
+            - cell "2026-10-07" [ref=e292]
+            - cell "2026-10-09" [ref=e293]
+            - cell "2" [ref=e294]
+            - cell "Reserved" [ref=e295]
+            - cell "CGR" [ref=e296]
+            - cell "EMA" [ref=e297]
+            - cell "EX" [ref=e298]
+            - cell "9" [ref=e299]
+            - cell "233.00" [ref=e300]
+            - cell "130" [ref=e301]
+            - cell "View →" [ref=e302]:
+              - link "View →" [ref=e303] [cursor=pointer]:
+                - /url: /reservations/R0019
+          - row "R0020 2026-09-29 2026-10-01 2 Cancelled PROM REC TB 1 162.00 160 View →" [ref=e304]:
+            - cell "R0020" [ref=e305]
+            - cell "2026-09-29" [ref=e306]
+            - cell "2026-10-01" [ref=e307]
+            - cell "2" [ref=e308]
+            - cell "Cancelled" [ref=e309]
+            - cell "PROM" [ref=e310]
+            - cell "REC" [ref=e311]
+            - cell "TB" [ref=e312]
+            - cell "1" [ref=e313]
+            - cell "162.00" [ref=e314]
+            - cell "160" [ref=e315]
+            - cell "View →" [ref=e316]:
+              - link "View →" [ref=e317] [cursor=pointer]:
+                - /url: /reservations/R0020
+          - row "R0021 2026-09-01 2026-09-02 1 Reserved BAR WEB KS 1 200.00 148 View →" [ref=e318]:
+            - cell "R0021" [ref=e319]
+            - cell "2026-09-01" [ref=e320]
+            - cell "2026-09-02" [ref=e321]
+            - cell "1" [ref=e322]
+            - cell "Reserved" [ref=e323]
+            - cell "BAR" [ref=e324]
+            - cell "WEB" [ref=e325]
+            - cell "KS" [ref=e326]
+            - cell "1" [ref=e327]
+            - cell "200.00" [ref=e328]
+            - cell "148" [ref=e329]
+            - cell "View →" [ref=e330]:
+              - link "View →" [ref=e331] [cursor=pointer]:
+                - /url: /reservations/R0021
+          - row "R0022 2026-06-24 2026-06-25 1 Reserved PROM REC TB 1 160.00 19 View →" [ref=e332]:
+            - cell "R0022" [ref=e333]
+            - cell "2026-06-24" [ref=e334]
+            - cell "2026-06-25" [ref=e335]
+            - cell "1" [ref=e336]
+            - cell "Reserved" [ref=e337]
+            - cell "PROM" [ref=e338]
+            - cell "REC" [ref=e339]
+            - cell "TB" [ref=e340]
+            - cell "1" [ref=e341]
+            - cell "160.00" [ref=e342]
+            - cell "19" [ref=e343]
+            - cell "View →" [ref=e344]:
+              - link "View →" [ref=e345] [cursor=pointer]:
+                - /url: /reservations/R0022
+          - row "R0023 2026-08-06 2026-08-07 1 Reserved PROM REC KS 1 181.00 160 View →" [ref=e346]:
+            - cell "R0023" [ref=e347]
+            - cell "2026-08-06" [ref=e348]
+            - cell "2026-08-07" [ref=e349]
+            - cell "1" [ref=e350]
+            - cell "Reserved" [ref=e351]
+            - cell "PROM" [ref=e352]
+            - cell "REC" [ref=e353]
+            - cell "KS" [ref=e354]
+            - cell "1" [ref=e355]
+            - cell "181.00" [ref=e356]
+            - cell "160" [ref=e357]
+            - cell "View →" [ref=e358]:
+              - link "View →" [ref=e359] [cursor=pointer]:
+                - /url: /reservations/R0023
+          - row "R0024 2026-08-07 2026-08-09 2 Reserved OTA WEB TB 1 166.00 160 View →" [ref=e360]:
+            - cell "R0024" [ref=e361]
+            - cell "2026-08-07" [ref=e362]
+            - cell "2026-08-09" [ref=e363]
+            - cell "2" [ref=e364]
+            - cell "Reserved" [ref=e365]
+            - cell "OTA" [ref=e366]
+            - cell "WEB" [ref=e367]
+            - cell "TB" [ref=e368]
+            - cell "1" [ref=e369]
+            - cell "166.00" [ref=e370]
+            - cell "160" [ref=e371]
+            - cell "View →" [ref=e372]:
+              - link "View →" [ref=e373] [cursor=pointer]:
+                - /url: /reservations/R0024
+          - row "R0025 2026-06-14 2026-06-18 4 Reserved CGR EMA KS 6 153.00 4 View →" [ref=e374]:
+            - cell "R0025" [ref=e375]
+            - cell "2026-06-14" [ref=e376]
+            - cell "2026-06-18" [ref=e377]
+            - cell "4" [ref=e378]
+            - cell "Reserved" [ref=e379]
+            - cell "CGR" [ref=e380]
+            - cell "EMA" [ref=e381]
+            - cell "KS" [ref=e382]
+            - cell "6" [ref=e383]
+            - cell "153.00" [ref=e384]
+            - cell "4" [ref=e385]
+            - cell "View →" [ref=e386]:
+              - link "View →" [ref=e387] [cursor=pointer]:
+                - /url: /reservations/R0025
+          - row "R0026 2026-10-04 2026-10-07 3 Reserved FIT WEB KS 1 214.00 160 View →" [ref=e388]:
+            - cell "R0026" [ref=e389]
+            - cell "2026-10-04" [ref=e390]
+            - cell "2026-10-07" [ref=e391]
+            - cell "3" [ref=e392]
+            - cell "Reserved" [ref=e393]
+            - cell "FIT" [ref=e394]
+            - cell "WEB" [ref=e395]
+            - cell "KS" [ref=e396]
+            - cell "1" [ref=e397]
+            - cell "214.00" [ref=e398]
+            - cell "160" [ref=e399]
+            - cell "View →" [ref=e400]:
+              - link "View →" [ref=e401] [cursor=pointer]:
+                - /url: /reservations/R0026
+          - row "R0027 2026-09-24 2026-09-25 1 Reserved OTA WEB KS 1 170.00 160 View →" [ref=e402]:
+            - cell "R0027" [ref=e403]
+            - cell "2026-09-24" [ref=e404]
+            - cell "2026-09-25" [ref=e405]
+            - cell "1" [ref=e406]
+            - cell "Reserved" [ref=e407]
+            - cell "OTA" [ref=e408]
+            - cell "WEB" [ref=e409]
+            - cell "KS" [ref=e410]
+            - cell "1" [ref=e411]
+            - cell "170.00" [ref=e412]
+            - cell "160" [ref=e413]
+            - cell "View →" [ref=e414]:
+              - link "View →" [ref=e415] [cursor=pointer]:
+                - /url: /reservations/R0027
+          - row "R0028 2026-06-15 2026-06-18 3 Reserved CSR EMA KS 1 200.00 9 View →" [ref=e416]:
+            - cell "R0028" [ref=e417]
+            - cell "2026-06-15" [ref=e418]
+            - cell "2026-06-18" [ref=e419]
+            - cell "3" [ref=e420]
+            - cell "Reserved" [ref=e421]
+            - cell "CSR" [ref=e422]
+            - cell "EMA" [ref=e423]
+            - cell "KS" [ref=e424]
+            - cell "1" [ref=e425]
+            - cell "200.00" [ref=e426]
+            - cell "9" [ref=e427]
+            - cell "View →" [ref=e428]:
+              - link "View →" [ref=e429] [cursor=pointer]:
+                - /url: /reservations/R0028
+          - row "R0029 2026-07-08 2026-07-10 2 Cancelled OTA WEB EX 1 245.00 97 View →" [ref=e430]:
+            - cell "R0029" [ref=e431]
+            - cell "2026-07-08" [ref=e432]
+            - cell "2026-07-10" [ref=e433]
+            - cell "2" [ref=e434]
+            - cell "Cancelled" [ref=e435]
+            - cell "OTA" [ref=e436]
+            - cell "WEB" [ref=e437]
+            - cell "EX" [ref=e438]
+            - cell "1" [ref=e439]
+            - cell "245.00" [ref=e440]
+            - cell "97" [ref=e441]
+            - cell "View →" [ref=e442]:
+              - link "View →" [ref=e443] [cursor=pointer]:
+                - /url: /reservations/R0029
+          - row "R0030 2026-08-30 2026-09-03 4 Reserved CNI EMA KS 9 181.00 108 View →" [ref=e444]:
+            - cell "R0030" [ref=e445]
+            - cell "2026-08-30" [ref=e446]
+            - cell "2026-09-03" [ref=e447]
+            - cell "4" [ref=e448]
+            - cell "Reserved" [ref=e449]
+            - cell "CNI" [ref=e450]
+            - cell "EMA" [ref=e451]
+            - cell "KS" [ref=e452]
+            - cell "9" [ref=e453]
+            - cell "181.00" [ref=e454]
+            - cell "108" [ref=e455]
+            - cell "View →" [ref=e456]:
+              - link "View →" [ref=e457] [cursor=pointer]:
+                - /url: /reservations/R0030
+          - row "R0031 2026-09-14 2026-09-16 2 Reserved BAR REC KS 1 209.00 151 View →" [ref=e458]:
+            - cell "R0031" [ref=e459]
+            - cell "2026-09-14" [ref=e460]
+            - cell "2026-09-16" [ref=e461]
+            - cell "2" [ref=e462]
+            - cell "Reserved" [ref=e463]
+            - cell "BAR" [ref=e464]
+            - cell "REC" [ref=e465]
+            - cell "KS" [ref=e466]
+            - cell "1" [ref=e467]
+            - cell "209.00" [ref=e468]
+            - cell "151" [ref=e469]
+            - cell "View →" [ref=e470]:
+              - link "View →" [ref=e471] [cursor=pointer]:
+                - /url: /reservations/R0031
+          - row "R0032 2026-06-19 2026-06-22 3 Cancelled PROM REC TB 1 157.00 83 View →" [ref=e472]:
+            - cell "R0032" [ref=e473]
+            - cell "2026-06-19" [ref=e474]
+            - cell "2026-06-22" [ref=e475]
+            - cell "3" [ref=e476]
+            - cell "Cancelled" [ref=e477]
+            - cell "PROM" [ref=e478]
+            - cell "REC" [ref=e479]
+            - cell "TB" [ref=e480]
+            - cell "1" [ref=e481]
+            - cell "157.00" [ref=e482]
+            - cell "83" [ref=e483]
+            - cell "View →" [ref=e484]:
+              - link "View →" [ref=e485] [cursor=pointer]:
+                - /url: /reservations/R0032
+          - row "R0033 2026-07-25 2026-07-28 3 Reserved CSR EMA TB 1 207.00 47 View →" [ref=e486]:
+            - cell "R0033" [ref=e487]
+            - cell "2026-07-25" [ref=e488]
+            - cell "2026-07-28" [ref=e489]
+            - cell "3" [ref=e490]
+            - cell "Reserved" [ref=e491]
+            - cell "CSR" [ref=e492]
+            - cell "EMA" [ref=e493]
+            - cell "TB" [ref=e494]
+            - cell "1" [ref=e495]
+            - cell "207.00" [ref=e496]
+            - cell "47" [ref=e497]
+            - cell "View →" [ref=e498]:
+              - link "View →" [ref=e499] [cursor=pointer]:
+                - /url: /reservations/R0033
+          - row "R0034 2026-07-08 2026-07-09 1 Reserved OTA WEB KS 2 167.00 88 View →" [ref=e500]:
+            - cell "R0034" [ref=e501]
+            - cell "2026-07-08" [ref=e502]
+            - cell "2026-07-09" [ref=e503]
+            - cell "1" [ref=e504]
+            - cell "Reserved" [ref=e505]
+            - cell "OTA" [ref=e506]
+            - cell "WEB" [ref=e507]
+            - cell "KS" [ref=e508]
+            - cell "2" [ref=e509]
+            - cell "167.00" [ref=e510]
+            - cell "88" [ref=e511]
+            - cell "View →" [ref=e512]:
+              - link "View →" [ref=e513] [cursor=pointer]:
+                - /url: /reservations/R0034
+          - row "R0035 2026-09-24 2026-09-26 2 Reserved SMERF EMA EX 9 223.00 160 View →" [ref=e514]:
+            - cell "R0035" [ref=e515]
+            - cell "2026-09-24" [ref=e516]
+            - cell "2026-09-26" [ref=e517]
+            - cell "2" [ref=e518]
+            - cell "Reserved" [ref=e519]
+            - cell "SMERF" [ref=e520]
+            - cell "EMA" [ref=e521]
+            - cell "EX" [ref=e522]
+            - cell "9" [ref=e523]
+            - cell "223.00" [ref=e524]
+            - cell "160" [ref=e525]
+            - cell "View →" [ref=e526]:
+              - link "View →" [ref=e527] [cursor=pointer]:
+                - /url: /reservations/R0035
+          - row "R0036 2026-06-20 2026-06-23 3 Reserved CSR WAL TB 1 175.00 113 View →" [ref=e528]:
+            - cell "R0036" [ref=e529]
+            - cell "2026-06-20" [ref=e530]
+            - cell "2026-06-23" [ref=e531]
+            - cell "3" [ref=e532]
+            - cell "Reserved" [ref=e533]
+            - cell "CSR" [ref=e534]
+            - cell "WAL" [ref=e535]
+            - cell "TB" [ref=e536]
+            - cell "1" [ref=e537]
+            - cell "175.00" [ref=e538]
+            - cell "113" [ref=e539]
+            - cell "View →" [ref=e540]:
+              - link "View →" [ref=e541] [cursor=pointer]:
+                - /url: /reservations/R0036
+          - row "R0037 2026-07-22 2026-07-24 2 Reserved OTA WEB KS 1 185.00 147 View →" [ref=e542]:
+            - cell "R0037" [ref=e543]
+            - cell "2026-07-22" [ref=e544]
+            - cell "2026-07-24" [ref=e545]
+            - cell "2" [ref=e546]
+            - cell "Reserved" [ref=e547]
+            - cell "OTA" [ref=e548]
+            - cell "WEB" [ref=e549]
+            - cell "KS" [ref=e550]
+            - cell "1" [ref=e551]
+            - cell "185.00" [ref=e552]
+            - cell "147" [ref=e553]
+            - cell "View →" [ref=e554]:
+              - link "View →" [ref=e555] [cursor=pointer]:
+                - /url: /reservations/R0037
+          - row "R0038 2026-10-06 2026-10-08 2 Reserved CNR EMA KS 1 204.00 160 View →" [ref=e556]:
+            - cell "R0038" [ref=e557]
+            - cell "2026-10-06" [ref=e558]
+            - cell "2026-10-08" [ref=e559]
+            - cell "2" [ref=e560]
+            - cell "Reserved" [ref=e561]
+            - cell "CNR" [ref=e562]
+            - cell "EMA" [ref=e563]
+            - cell "KS" [ref=e564]
+            - cell "1" [ref=e565]
+            - cell "204.00" [ref=e566]
+            - cell "160" [ref=e567]
+            - cell "View →" [ref=e568]:
+              - link "View →" [ref=e569] [cursor=pointer]:
+                - /url: /reservations/R0038
+          - row "R0039 2026-09-10 2026-09-13 3 Reserved OTA WEB KS 1 179.00 160 View →" [ref=e570]:
+            - cell "R0039" [ref=e571]
+            - cell "2026-09-10" [ref=e572]
+            - cell "2026-09-13" [ref=e573]
+            - cell "3" [ref=e574]
+            - cell "Reserved" [ref=e575]
+            - cell "OTA" [ref=e576]
+            - cell "WEB" [ref=e577]
+            - cell "KS" [ref=e578]
+            - cell "1" [ref=e579]
+            - cell "179.00" [ref=e580]
+            - cell "160" [ref=e581]
+            - cell "View →" [ref=e582]:
+              - link "View →" [ref=e583] [cursor=pointer]:
+                - /url: /reservations/R0039
+          - row "R0040 2026-09-30 2026-10-02 2 Reserved FIT REC KS 1 223.00 133 View →" [ref=e584]:
+            - cell "R0040" [ref=e585]
+            - cell "2026-09-30" [ref=e586]
+            - cell "2026-10-02" [ref=e587]
+            - cell "2" [ref=e588]
+            - cell "Reserved" [ref=e589]
+            - cell "FIT" [ref=e590]
+            - cell "REC" [ref=e591]
+            - cell "KS" [ref=e592]
+            - cell "1" [ref=e593]
+            - cell "223.00" [ref=e594]
+            - cell "133" [ref=e595]
+            - cell "View →" [ref=e596]:
+              - link "View →" [ref=e597] [cursor=pointer]:
+                - /url: /reservations/R0040
+          - row "R0041 2026-07-15 2026-07-18 3 Reserved CGR EMA TB 5 178.00 132 View →" [ref=e598]:
+            - cell "R0041" [ref=e599]
+            - cell "2026-07-15" [ref=e600]
+            - cell "2026-07-18" [ref=e601]
+            - cell "3" [ref=e602]
+            - cell "Reserved" [ref=e603]
+            - cell "CGR" [ref=e604]
+            - cell "EMA" [ref=e605]
+            - cell "TB" [ref=e606]
+            - cell "5" [ref=e607]
+            - cell "178.00" [ref=e608]
+            - cell "132" [ref=e609]
+            - cell "View →" [ref=e610]:
+              - link "View →" [ref=e611] [cursor=pointer]:
+                - /url: /reservations/R0041
+          - row "R0042 2026-07-23 2026-07-26 3 Reserved OTA WEB TB 1 190.00 94 View →" [ref=e612]:
+            - cell "R0042" [ref=e613]
+            - cell "2026-07-23" [ref=e614]
+            - cell "2026-07-26" [ref=e615]
+            - cell "3" [ref=e616]
+            - cell "Reserved" [ref=e617]
+            - cell "OTA" [ref=e618]
+            - cell "WEB" [ref=e619]
+            - cell "TB" [ref=e620]
+            - cell "1" [ref=e621]
+            - cell "190.00" [ref=e622]
+            - cell "94" [ref=e623]
+            - cell "View →" [ref=e624]:
+              - link "View →" [ref=e625] [cursor=pointer]:
+                - /url: /reservations/R0042
+          - row "R0043 2026-09-15 2026-09-16 1 Reserved CSR REC EX 1 259.00 143 View →" [ref=e626]:
+            - cell "R0043" [ref=e627]
+            - cell "2026-09-15" [ref=e628]
+            - cell "2026-09-16" [ref=e629]
+            - cell "1" [ref=e630]
+            - cell "Reserved" [ref=e631]
+            - cell "CSR" [ref=e632]
+            - cell "REC" [ref=e633]
+            - cell "EX" [ref=e634]
+            - cell "1" [ref=e635]
+            - cell "259.00" [ref=e636]
+            - cell "143" [ref=e637]
+            - cell "View →" [ref=e638]:
+              - link "View →" [ref=e639] [cursor=pointer]:
+                - /url: /reservations/R0043
+          - row "R0044 2026-07-29 2026-07-31 2 Reserved BAR WEB TB 1 190.00 123 View →" [ref=e640]:
+            - cell "R0044" [ref=e641]
+            - cell "2026-07-29" [ref=e642]
+            - cell "2026-07-31" [ref=e643]
+            - cell "2" [ref=e644]
+            - cell "Reserved" [ref=e645]
+            - cell "BAR" [ref=e646]
+            - cell "WEB" [ref=e647]
+            - cell "TB" [ref=e648]
+            - cell "1" [ref=e649]
+            - cell "190.00" [ref=e650]
+            - cell "123" [ref=e651]
+            - cell "View →" [ref=e652]:
+              - link "View →" [ref=e653] [cursor=pointer]:
+                - /url: /reservations/R0044
+          - row "R0045 2026-09-14 2026-09-17 3 Reserved OTA WAL KS 1 170.00 160 View →" [ref=e654]:
+            - cell "R0045" [ref=e655]
+            - cell "2026-09-14" [ref=e656]
+            - cell "2026-09-17" [ref=e657]
+            - cell "3" [ref=e658]
+            - cell "Reserved" [ref=e659]
+            - cell "OTA" [ref=e660]
+            - cell "WAL" [ref=e661]
+            - cell "KS" [ref=e662]
+            - cell "1" [ref=e663]
+            - cell "170.00" [ref=e664]
+            - cell "160" [ref=e665]
+            - cell "View →" [ref=e666]:
+              - link "View →" [ref=e667] [cursor=pointer]:
+                - /url: /reservations/R0045
+          - row "R0046 2026-06-15 2026-06-18 3 Reserved CNR EMA TB 1 171.00 34 View →" [ref=e668]:
+            - cell "R0046" [ref=e669]
+            - cell "2026-06-15" [ref=e670]
+            - cell "2026-06-18" [ref=e671]
+            - cell "3" [ref=e672]
+            - cell "Reserved" [ref=e673]
+            - cell "CNR" [ref=e674]
+            - cell "EMA" [ref=e675]
+            - cell "TB" [ref=e676]
+            - cell "1" [ref=e677]
+            - cell "171.00" [ref=e678]
+            - cell "34" [ref=e679]
+            - cell "View →" [ref=e680]:
+              - link "View →" [ref=e681] [cursor=pointer]:
+                - /url: /reservations/R0046
+          - row "R0047 2026-07-21 2026-07-24 3 Reserved OTA WEB KS 1 191.00 93 View →" [ref=e682]:
+            - cell "R0047" [ref=e683]
+            - cell "2026-07-21" [ref=e684]
+            - cell "2026-07-24" [ref=e685]
+            - cell "3" [ref=e686]
+            - cell "Reserved" [ref=e687]
+            - cell "OTA" [ref=e688]
+            - cell "WEB" [ref=e689]
+            - cell "KS" [ref=e690]
+            - cell "1" [ref=e691]
+            - cell "191.00" [ref=e692]
+            - cell "93" [ref=e693]
+            - cell "View →" [ref=e694]:
+              - link "View →" [ref=e695] [cursor=pointer]:
+                - /url: /reservations/R0047
+          - row "R0048 2026-08-01 2026-08-04 3 Cancelled CNI EMA KS 5 163.00 155 View →" [ref=e696]:
+            - cell "R0048" [ref=e697]
+            - cell "2026-08-01" [ref=e698]
+            - cell "2026-08-04" [ref=e699]
+            - cell "3" [ref=e700]
+            - cell "Cancelled" [ref=e701]
+            - cell "CNI" [ref=e702]
+            - cell "EMA" [ref=e703]
+            - cell "KS" [ref=e704]
+            - cell "5" [ref=e705]
+            - cell "163.00" [ref=e706]
+            - cell "155" [ref=e707]
+            - cell "View →" [ref=e708]:
+              - link "View →" [ref=e709] [cursor=pointer]:
+                - /url: /reservations/R0048
+          - row "R0049 2026-08-17 2026-08-20 3 Cancelled OTA WEB KS 2 167.00 156 View →" [ref=e710]:
+            - cell "R0049" [ref=e711]
+            - cell "2026-08-17" [ref=e712]
+            - cell "2026-08-20" [ref=e713]
+            - cell "3" [ref=e714]
+            - cell "Cancelled" [ref=e715]
+            - cell "OTA" [ref=e716]
+            - cell "WEB" [ref=e717]
+            - cell "KS" [ref=e718]
+            - cell "2" [ref=e719]
+            - cell "167.00" [ref=e720]
+            - cell "156" [ref=e721]
+            - cell "View →" [ref=e722]:
+              - link "View →" [ref=e723] [cursor=pointer]:
+                - /url: /reservations/R0049
+          - row "R0050 2026-09-22 2026-09-25 3 Reserved FIT WEB KS 1 208.00 160 View →" [ref=e724]:
+            - cell "R0050" [ref=e725]
+            - cell "2026-09-22" [ref=e726]
+            - cell "2026-09-25" [ref=e727]
+            - cell "3" [ref=e728]
+            - cell "Reserved" [ref=e729]
+            - cell "FIT" [ref=e730]
+            - cell "WEB" [ref=e731]
+            - cell "KS" [ref=e732]
+            - cell "1" [ref=e733]
+            - cell "208.00" [ref=e734]
+            - cell "160" [ref=e735]
+            - cell "View →" [ref=e736]:
+              - link "View →" [ref=e737] [cursor=pointer]:
+                - /url: /reservations/R0050
+          - row "R0051 2026-08-14 2026-08-16 2 Cancelled OTA WEB KS 1 182.00 113 View →" [ref=e738]:
+            - cell "R0051" [ref=e739]
+            - cell "2026-08-14" [ref=e740]
+            - cell "2026-08-16" [ref=e741]
+            - cell "2" [ref=e742]
+            - cell "Cancelled" [ref=e743]
+            - cell "OTA" [ref=e744]
+            - cell "WEB" [ref=e745]
+            - cell "KS" [ref=e746]
+            - cell "1" [ref=e747]
+            - cell "182.00" [ref=e748]
+            - cell "113" [ref=e749]
+            - cell "View →" [ref=e750]:
+              - link "View →" [ref=e751] [cursor=pointer]:
+                - /url: /reservations/R0051
+          - row "R0052 2026-09-18 2026-09-21 3 Reserved CSR EMA KS 1 205.00 160 View →" [ref=e752]:
+            - cell "R0052" [ref=e753]
+            - cell "2026-09-18" [ref=e754]
+            - cell "2026-09-21" [ref=e755]
+            - cell "3" [ref=e756]
+            - cell "Reserved" [ref=e757]
+            - cell "CSR" [ref=e758]
+            - cell "EMA" [ref=e759]
+            - cell "KS" [ref=e760]
+            - cell "1" [ref=e761]
+            - cell "205.00" [ref=e762]
+            - cell "160" [ref=e763]
+            - cell "View →" [ref=e764]:
+              - link "View →" [ref=e765] [cursor=pointer]:
+                - /url: /reservations/R0052
+          - row "R0053 2026-06-28 2026-06-30 2 Reserved OTA WEB KS 1 168.00 23 View →" [ref=e766]:
+            - cell "R0053" [ref=e767]
+            - cell "2026-06-28" [ref=e768]
+            - cell "2026-06-30" [ref=e769]
+            - cell "2" [ref=e770]
+            - cell "Reserved" [ref=e771]
+            - cell "OTA" [ref=e772]
+            - cell "WEB" [ref=e773]
+            - cell "KS" [ref=e774]
+            - cell "1" [ref=e775]
+            - cell "168.00" [ref=e776]
+            - cell "23" [ref=e777]
+            - cell "View →" [ref=e778]:
+              - link "View →" [ref=e779] [cursor=pointer]:
+                - /url: /reservations/R0053
+          - row "R0054 2026-09-24 2026-09-27 3 Reserved CSR REC TB 1 198.00 160 View →" [ref=e780]:
+            - cell "R0054" [ref=e781]
+            - cell "2026-09-24" [ref=e782]
+            - cell "2026-09-27" [ref=e783]
+            - cell "3" [ref=e784]
+            - cell "Reserved" [ref=e785]
+            - cell "CSR" [ref=e786]
+            - cell "REC" [ref=e787]
+            - cell "TB" [ref=e788]
+            - cell "1" [ref=e789]
+            - cell "198.00" [ref=e790]
+            - cell "160" [ref=e791]
+            - cell "View →" [ref=e792]:
+              - link "View →" [ref=e793] [cursor=pointer]:
+                - /url: /reservations/R0054
+          - row "R0055 2026-09-07 2026-09-09 2 Reserved OTA WEB KS 1 167.00 89 View →" [ref=e794]:
+            - cell "R0055" [ref=e795]
+            - cell "2026-09-07" [ref=e796]
+            - cell "2026-09-09" [ref=e797]
+            - cell "2" [ref=e798]
+            - cell "Reserved" [ref=e799]
+            - cell "OTA" [ref=e800]
+            - cell "WEB" [ref=e801]
+            - cell "KS" [ref=e802]
+            - cell "1" [ref=e803]
+            - cell "167.00" [ref=e804]
+            - cell "89" [ref=e805]
+            - cell "View →" [ref=e806]:
+              - link "View →" [ref=e807] [cursor=pointer]:
+                - /url: /reservations/R0055
+          - row "R0056 2026-07-28 2026-07-30 2 Reserved CSR REC KS 1 205.00 160 View →" [ref=e808]:
+            - cell "R0056" [ref=e809]
+            - cell "2026-07-28" [ref=e810]
+            - cell "2026-07-30" [ref=e811]
+            - cell "2" [ref=e812]
+            - cell "Reserved" [ref=e813]
+            - cell "CSR" [ref=e814]
+            - cell "REC" [ref=e815]
+            - cell "KS" [ref=e816]
+            - cell "1" [ref=e817]
+            - cell "205.00" [ref=e818]
+            - cell "160" [ref=e819]
+            - cell "View →" [ref=e820]:
+              - link "View →" [ref=e821] [cursor=pointer]:
+                - /url: /reservations/R0056
+          - row "R0057 2026-05-30 2026-06-02 3 Reserved BAR REC TB 1 199.00 84 View →" [ref=e822]:
+            - cell "R0057" [ref=e823]
+            - cell "2026-05-30" [ref=e824]
+            - cell "2026-06-02" [ref=e825]
+            - cell "3" [ref=e826]
+            - cell "Reserved" [ref=e827]
+            - cell "BAR" [ref=e828]
+            - cell "REC" [ref=e829]
+            - cell "TB" [ref=e830]
+            - cell "1" [ref=e831]
+            - cell "199.00" [ref=e832]
+            - cell "84" [ref=e833]
+            - cell "View →" [ref=e834]:
+              - link "View →" [ref=e835] [cursor=pointer]:
+                - /url: /reservations/R0057
+          - row "R0058 2026-07-21 2026-07-24 3 Reserved PROM REC KS 1 196.00 96 View →" [ref=e836]:
+            - cell "R0058" [ref=e837]
+            - cell "2026-07-21" [ref=e838]
+            - cell "2026-07-24" [ref=e839]
+            - cell "3" [ref=e840]
+            - cell "Reserved" [ref=e841]
+            - cell "PROM" [ref=e842]
+            - cell "REC" [ref=e843]
+            - cell "KS" [ref=e844]
+            - cell "1" [ref=e845]
+            - cell "196.00" [ref=e846]
+            - cell "96" [ref=e847]
+            - cell "View →" [ref=e848]:
+              - link "View →" [ref=e849] [cursor=pointer]:
+                - /url: /reservations/R0058
+          - row "R0059 2026-08-15 2026-08-17 2 Reserved OTA WEB TB 1 160.00 121 View →" [ref=e850]:
+            - cell "R0059" [ref=e851]
+            - cell "2026-08-15" [ref=e852]
+            - cell "2026-08-17" [ref=e853]
+            - cell "2" [ref=e854]
+            - cell "Reserved" [ref=e855]
+            - cell "OTA" [ref=e856]
+            - cell "WEB" [ref=e857]
+            - cell "TB" [ref=e858]
+            - cell "1" [ref=e859]
+            - cell "160.00" [ref=e860]
+            - cell "121" [ref=e861]
+            - cell "View →" [ref=e862]:
+              - link "View →" [ref=e863] [cursor=pointer]:
+                - /url: /reservations/R0059
+          - row "R0060 2026-07-20 2026-07-21 1 Reserved CNR WAL KS 1 219.00 76 View →" [ref=e864]:
+            - cell "R0060" [ref=e865]
+            - cell "2026-07-20" [ref=e866]
+            - cell "2026-07-21" [ref=e867]
+            - cell "1" [ref=e868]
+            - cell "Reserved" [ref=e869]
+            - cell "CNR" [ref=e870]
+            - cell "WAL" [ref=e871]
+            - cell "KS" [ref=e872]
+            - cell "1" [ref=e873]
+            - cell "219.00" [ref=e874]
+            - cell "76" [ref=e875]
+            - cell "View →" [ref=e876]:
+              - link "View →" [ref=e877] [cursor=pointer]:
+                - /url: /reservations/R0060
+          - row "R0061 2026-10-06 2026-10-07 1 Reserved CSR REC KS 2 205.00 160 View →" [ref=e878]:
+            - cell "R0061" [ref=e879]
+            - cell "2026-10-06" [ref=e880]
+            - cell "2026-10-07" [ref=e881]
+            - cell "1" [ref=e882]
+            - cell "Reserved" [ref=e883]
+            - cell "CSR" [ref=e884]
+            - cell "REC" [ref=e885]
+            - cell "KS" [ref=e886]
+            - cell "2" [ref=e887]
+            - cell "205.00" [ref=e888]
+            - cell "160" [ref=e889]
+            - cell "View →" [ref=e890]:
+              - link "View →" [ref=e891] [cursor=pointer]:
+                - /url: /reservations/R0061
+          - row "R0062 2026-06-14 2026-06-17 3 Reserved CNR WAL KS 1 193.00 83 View →" [ref=e892]:
+            - cell "R0062" [ref=e893]
+            - cell "2026-06-14" [ref=e894]
+            - cell "2026-06-17" [ref=e895]
+            - cell "3" [ref=e896]
+            - cell "Reserved" [ref=e897]
+            - cell "CNR" [ref=e898]
+            - cell "WAL" [ref=e899]
+            - cell "KS" [ref=e900]
+            - cell "1" [ref=e901]
+            - cell "193.00" [ref=e902]
+            - cell "83" [ref=e903]
+            - cell "View →" [ref=e904]:
+              - link "View →" [ref=e905] [cursor=pointer]:
+                - /url: /reservations/R0062
+          - row "R0063 2026-09-18 2026-09-19 1 Reserved OTA WEB KS 1 179.00 160 View →" [ref=e906]:
+            - cell "R0063" [ref=e907]
+            - cell "2026-09-18" [ref=e908]
+            - cell "2026-09-19" [ref=e909]
+            - cell "1" [ref=e910]
+            - cell "Reserved" [ref=e911]
+            - cell "OTA" [ref=e912]
+            - cell "WEB" [ref=e913]
+            - cell "KS" [ref=e914]
+            - cell "1" [ref=e915]
+            - cell "179.00" [ref=e916]
+            - cell "160" [ref=e917]
+            - cell "View →" [ref=e918]:
+              - link "View →" [ref=e919] [cursor=pointer]:
+                - /url: /reservations/R0063
+          - row "R0064 2026-07-27 2026-07-29 2 Reserved FIT REC KS 1 214.00 120 View →" [ref=e920]:
+            - cell "R0064" [ref=e921]
+            - cell "2026-07-27" [ref=e922]
+            - cell "2026-07-29" [ref=e923]
+            - cell "2" [ref=e924]
+            - cell "Reserved" [ref=e925]
+            - cell "FIT" [ref=e926]
+            - cell "REC" [ref=e927]
+            - cell "KS" [ref=e928]
+            - cell "1" [ref=e929]
+            - cell "214.00" [ref=e930]
+            - cell "120" [ref=e931]
+            - cell "View →" [ref=e932]:
+              - link "View →" [ref=e933] [cursor=pointer]:
+                - /url: /reservations/R0064
+          - row "R0065 2026-08-31 2026-09-01 1 Reserved OTA WEB KS 1 182.00 129 View →" [ref=e934]:
+            - cell "R0065" [ref=e935]
+            - cell "2026-08-31" [ref=e936]
+            - cell "2026-09-01" [ref=e937]
+            - cell "1" [ref=e938]
+            - cell "Reserved" [ref=e939]
+            - cell "OTA" [ref=e940]
+            - cell "WEB" [ref=e941]
+            - cell "KS" [ref=e942]
+            - cell "1" [ref=e943]
+            - cell "182.00" [ref=e944]
+            - cell "129" [ref=e945]
+            - cell "View →" [ref=e946]:
+              - link "View →" [ref=e947] [cursor=pointer]:
+                - /url: /reservations/R0065
+          - row "R0066 2026-07-02 2026-07-04 2 Reserved PROM REC TB 1 180.00 111 View →" [ref=e948]:
+            - cell "R0066" [ref=e949]
+            - cell "2026-07-02" [ref=e950]
+            - cell "2026-07-04" [ref=e951]
+            - cell "2" [ref=e952]
+            - cell "Reserved" [ref=e953]
+            - cell "PROM" [ref=e954]
+            - cell "REC" [ref=e955]
+            - cell "TB" [ref=e956]
+            - cell "1" [ref=e957]
+            - cell "180.00" [ref=e958]
+            - cell "111" [ref=e959]
+            - cell "View →" [ref=e960]:
+              - link "View →" [ref=e961] [cursor=pointer]:
+                - /url: /reservations/R0066
+          - row "R0067 2026-07-13 2026-07-16 3 Reserved EVEN EMA TB 6 181.00 99 View →" [ref=e962]:
+            - cell "R0067" [ref=e963]
+            - cell "2026-07-13" [ref=e964]
+            - cell "2026-07-16" [ref=e965]
+            - cell "3" [ref=e966]
+            - cell "Reserved" [ref=e967]
+            - cell "EVEN" [ref=e968]
+            - cell "EMA" [ref=e969]
+            - cell "TB" [ref=e970]
+            - cell "6" [ref=e971]
+            - cell "181.00" [ref=e972]
+            - cell "99" [ref=e973]
+            - cell "View →" [ref=e974]:
+              - link "View →" [ref=e975] [cursor=pointer]:
+                - /url: /reservations/R0067
+          - row "R0068 2026-09-22 2026-09-25 3 Reserved OTA WEB KS 1 167.00 160 View →" [ref=e976]:
+            - cell "R0068" [ref=e977]
+            - cell "2026-09-22" [ref=e978]
+            - cell "2026-09-25" [ref=e979]
+            - cell "3" [ref=e980]
+            - cell "Reserved" [ref=e981]
+            - cell "OTA" [ref=e982]
+            - cell "WEB" [ref=e983]
+            - cell "KS" [ref=e984]
+            - cell "1" [ref=e985]
+            - cell "167.00" [ref=e986]
+            - cell "160" [ref=e987]
+            - cell "View →" [ref=e988]:
+              - link "View →" [ref=e989] [cursor=pointer]:
+                - /url: /reservations/R0068
+          - row "R0069 2026-10-04 2026-10-06 2 Reserved FIT REC KS 1 223.00 160 View →" [ref=e990]:
+            - cell "R0069" [ref=e991]
+            - cell "2026-10-04" [ref=e992]
+            - cell "2026-10-06" [ref=e993]
+            - cell "2" [ref=e994]
+            - cell "Reserved" [ref=e995]
+            - cell "FIT" [ref=e996]
+            - cell "REC" [ref=e997]
+            - cell "KS" [ref=e998]
+            - cell "1" [ref=e999]
+            - cell "223.00" [ref=e1000]
+            - cell "160" [ref=e1001]
+            - cell "View →" [ref=e1002]:
+              - link "View →" [ref=e1003] [cursor=pointer]:
+                - /url: /reservations/R0069
+          - row "R0070 2026-06-16 2026-06-18 2 Reserved CSR REC KS 1 188.00 61 View →" [ref=e1004]:
+            - cell "R0070" [ref=e1005]
+            - cell "2026-06-16" [ref=e1006]
+            - cell "2026-06-18" [ref=e1007]
+            - cell "2" [ref=e1008]
+            - cell "Reserved" [ref=e1009]
+            - cell "CSR" [ref=e1010]
+            - cell "REC" [ref=e1011]
+            - cell "KS" [ref=e1012]
+            - cell "1" [ref=e1013]
+            - cell "188.00" [ref=e1014]
+            - cell "61" [ref=e1015]
+            - cell "View →" [ref=e1016]:
+              - link "View →" [ref=e1017] [cursor=pointer]:
+                - /url: /reservations/R0070
+          - row "R0071 2026-07-02 2026-07-04 2 Reserved CSR EMA KS 1 205.00 154 View →" [ref=e1018]:
+            - cell "R0071" [ref=e1019]
+            - cell "2026-07-02" [ref=e1020]
+            - cell "2026-07-04" [ref=e1021]
+            - cell "2" [ref=e1022]
+            - cell "Reserved" [ref=e1023]
+            - cell "CSR" [ref=e1024]
+            - cell "EMA" [ref=e1025]
+            - cell "KS" [ref=e1026]
+            - cell "1" [ref=e1027]
+            - cell "205.00" [ref=e1028]
+            - cell "154" [ref=e1029]
+            - cell "View →" [ref=e1030]:
+              - link "View →" [ref=e1031] [cursor=pointer]:
+                - /url: /reservations/R0071
+          - row "R0072 2026-09-10 2026-09-13 3 Cancelled OTA WEB KS 1 167.00 94 View →" [ref=e1032]:
+            - cell "R0072" [ref=e1033]
+            - cell "2026-09-10" [ref=e1034]
+            - cell "2026-09-13" [ref=e1035]
+            - cell "3" [ref=e1036]
+            - cell "Cancelled" [ref=e1037]
+            - cell "OTA" [ref=e1038]
+            - cell "WEB" [ref=e1039]
+            - cell "KS" [ref=e1040]
+            - cell "1" [ref=e1041]
+            - cell "167.00" [ref=e1042]
+            - cell "94" [ref=e1043]
+            - cell "View →" [ref=e1044]:
+              - link "View →" [ref=e1045] [cursor=pointer]:
+                - /url: /reservations/R0072
+          - row "R0073 2026-09-26 2026-09-29 3 Reserved CSR EMA TB 1 189.00 143 View →" [ref=e1046]:
+            - cell "R0073" [ref=e1047]
+            - cell "2026-09-26" [ref=e1048]
+            - cell "2026-09-29" [ref=e1049]
+            - cell "3" [ref=e1050]
+            - cell "Reserved" [ref=e1051]
+            - cell "CSR" [ref=e1052]
+            - cell "EMA" [ref=e1053]
+            - cell "TB" [ref=e1054]
+            - cell "1" [ref=e1055]
+            - cell "189.00" [ref=e1056]
+            - cell "143" [ref=e1057]
+            - cell "View →" [ref=e1058]:
+              - link "View →" [ref=e1059] [cursor=pointer]:
+                - /url: /reservations/R0073
+          - row "R0074 2026-09-19 2026-09-21 2 Reserved CNR REC KS 1 204.00 160 View →" [ref=e1060]:
+            - cell "R0074" [ref=e1061]
+            - cell "2026-09-19" [ref=e1062]
+            - cell "2026-09-21" [ref=e1063]
+            - cell "2" [ref=e1064]
+            - cell "Reserved" [ref=e1065]
+            - cell "CNR" [ref=e1066]
+            - cell "REC" [ref=e1067]
+            - cell "KS" [ref=e1068]
+            - cell "1" [ref=e1069]
+            - cell "204.00" [ref=e1070]
+            - cell "160" [ref=e1071]
+            - cell "View →" [ref=e1072]:
+              - link "View →" [ref=e1073] [cursor=pointer]:
+                - /url: /reservations/R0074
+          - row "R0075 2026-07-25 2026-07-28 3 Reserved PROM REC KS 1 193.00 108 View →" [ref=e1074]:
+            - cell "R0075" [ref=e1075]
+            - cell "2026-07-25" [ref=e1076]
+            - cell "2026-07-28" [ref=e1077]
+            - cell "3" [ref=e1078]
+            - cell "Reserved" [ref=e1079]
+            - cell "PROM" [ref=e1080]
+            - cell "REC" [ref=e1081]
+            - cell "KS" [ref=e1082]
+            - cell "1" [ref=e1083]
+            - cell "193.00" [ref=e1084]
+            - cell "108" [ref=e1085]
+            - cell "View →" [ref=e1086]:
+              - link "View →" [ref=e1087] [cursor=pointer]:
+                - /url: /reservations/R0075
+          - row "R0076 2026-08-16 2026-08-17 1 Reserved CNR REC KS 1 192.00 154 View →" [ref=e1088]:
+            - cell "R0076" [ref=e1089]
+            - cell "2026-08-16" [ref=e1090]
+            - cell "2026-08-17" [ref=e1091]
+            - cell "1" [ref=e1092]
+            - cell "Reserved" [ref=e1093]
+            - cell "CNR" [ref=e1094]
+            - cell "REC" [ref=e1095]
+            - cell "KS" [ref=e1096]
+            - cell "1" [ref=e1097]
+            - cell "192.00" [ref=e1098]
+            - cell "154" [ref=e1099]
+            - cell "View →" [ref=e1100]:
+              - link "View →" [ref=e1101] [cursor=pointer]:
+                - /url: /reservations/R0076
+          - row "R0077 2026-07-15 2026-07-16 1 Reserved PROM WEB KS 1 196.00 145 View →" [ref=e1102]:
+            - cell "R0077" [ref=e1103]
+            - cell "2026-07-15" [ref=e1104]
+            - cell "2026-07-16" [ref=e1105]
+            - cell "1" [ref=e1106]
+            - cell "Reserved" [ref=e1107]
+            - cell "PROM" [ref=e1108]
+            - cell "WEB" [ref=e1109]
+            - cell "KS" [ref=e1110]
+            - cell "1" [ref=e1111]
+            - cell "196.00" [ref=e1112]
+            - cell "145" [ref=e1113]
+            - cell "View →" [ref=e1114]:
+              - link "View →" [ref=e1115] [cursor=pointer]:
+                - /url: /reservations/R0077
+          - row "R0078 2026-07-19 2026-07-22 3 Reserved FIT REC KS 1 223.00 99 View →" [ref=e1116]:
+            - cell "R0078" [ref=e1117]
+            - cell "2026-07-19" [ref=e1118]
+            - cell "2026-07-22" [ref=e1119]
+            - cell "3" [ref=e1120]
+            - cell "Reserved" [ref=e1121]
+            - cell "FIT" [ref=e1122]
+            - cell "REC" [ref=e1123]
+            - cell "KS" [ref=e1124]
+            - cell "1" [ref=e1125]
+            - cell "223.00" [ref=e1126]
+            - cell "99" [ref=e1127]
+            - cell "View →" [ref=e1128]:
+              - link "View →" [ref=e1129] [cursor=pointer]:
+                - /url: /reservations/R0078
+          - row "R0079 2026-09-21 2026-09-24 3 Reserved PROM REC TB 1 180.00 160 View →" [ref=e1130]:
+            - cell "R0079" [ref=e1131]
+            - cell "2026-09-21" [ref=e1132]
+            - cell "2026-09-24" [ref=e1133]
+            - cell "3" [ref=e1134]
+            - cell "Reserved" [ref=e1135]
+            - cell "PROM" [ref=e1136]
+            - cell "REC" [ref=e1137]
+            - cell "TB" [ref=e1138]
+            - cell "1" [ref=e1139]
+            - cell "180.00" [ref=e1140]
+            - cell "160" [ref=e1141]
+            - cell "View →" [ref=e1142]:
+              - link "View →" [ref=e1143] [cursor=pointer]:
+                - /url: /reservations/R0079
+          - row "R0080 2026-09-27 2026-09-29 2 Reserved CSR EMA KS 1 202.00 160 View →" [ref=e1144]:
+            - cell "R0080" [ref=e1145]
+            - cell "2026-09-27" [ref=e1146]
+            - cell "2026-09-29" [ref=e1147]
+            - cell "2" [ref=e1148]
+            - cell "Reserved" [ref=e1149]
+            - cell "CSR" [ref=e1150]
+            - cell "EMA" [ref=e1151]
+            - cell "KS" [ref=e1152]
+            - cell "1" [ref=e1153]
+            - cell "202.00" [ref=e1154]
+            - cell "160" [ref=e1155]
+            - cell "View →" [ref=e1156]:
+              - link "View →" [ref=e1157] [cursor=pointer]:
+                - /url: /reservations/R0080
+          - row "R0081 2026-07-12 2026-07-13 1 Reserved CNR REC KS 1 195.00 160 View →" [ref=e1158]:
+            - cell "R0081" [ref=e1159]
+            - cell "2026-07-12" [ref=e1160]
+            - cell "2026-07-13" [ref=e1161]
+            - cell "1" [ref=e1162]
+            - cell "Reserved" [ref=e1163]
+            - cell "CNR" [ref=e1164]
+            - cell "REC" [ref=e1165]
+            - cell "KS" [ref=e1166]
+            - cell "1" [ref=e1167]
+            - cell "195.00" [ref=e1168]
+            - cell "160" [ref=e1169]
+            - cell "View →" [ref=e1170]:
+              - link "View →" [ref=e1171] [cursor=pointer]:
+                - /url: /reservations/R0081
+          - row "R0082 2026-07-25 2026-07-27 2 Reserved CNR EMA KS 1 213.00 123 View →" [ref=e1172]:
+            - cell "R0082" [ref=e1173]
+            - cell "2026-07-25" [ref=e1174]
+            - cell "2026-07-27" [ref=e1175]
+            - cell "2" [ref=e1176]
+            - cell "Reserved" [ref=e1177]
+            - cell "CNR" [ref=e1178]
+            - cell "EMA" [ref=e1179]
+            - cell "KS" [ref=e1180]
+            - cell "1" [ref=e1181]
+            - cell "213.00" [ref=e1182]
+            - cell "123" [ref=e1183]
+            - cell "View →" [ref=e1184]:
+              - link "View →" [ref=e1185] [cursor=pointer]:
+                - /url: /reservations/R0082
+          - row "R0083 2026-09-28 2026-09-29 1 Reserved BAR WAL TB 1 202.00 152 View →" [ref=e1186]:
+            - cell "R0083" [ref=e1187]
+            - cell "2026-09-28" [ref=e1188]
+            - cell "2026-09-29" [ref=e1189]
+            - cell "1" [ref=e1190]
+            - cell "Reserved" [ref=e1191]
+            - cell "BAR" [ref=e1192]
+            - cell "WAL" [ref=e1193]
+            - cell "TB" [ref=e1194]
+            - cell "1" [ref=e1195]
+            - cell "202.00" [ref=e1196]
+            - cell "152" [ref=e1197]
+            - cell "View →" [ref=e1198]:
+              - link "View →" [ref=e1199] [cursor=pointer]:
+                - /url: /reservations/R0083
+          - row "R0084 2026-08-04 2026-08-07 3 Cancelled OTA WEB KS 1 173.00 120 View →" [ref=e1200]:
+            - cell "R0084" [ref=e1201]
+            - cell "2026-08-04" [ref=e1202]
+            - cell "2026-08-07" [ref=e1203]
+            - cell "3" [ref=e1204]
+            - cell "Cancelled" [ref=e1205]
+            - cell "OTA" [ref=e1206]
+            - cell "WEB" [ref=e1207]
+            - cell "KS" [ref=e1208]
+            - cell "1" [ref=e1209]
+            - cell "173.00" [ref=e1210]
+            - cell "120" [ref=e1211]
+            - cell "View →" [ref=e1212]:
+              - link "View →" [ref=e1213] [cursor=pointer]:
+                - /url: /reservations/R0084
+          - row "R0085 2026-07-17 2026-07-21 4 Cancelled EVEN EMA TB 8 184.00 160 View →" [ref=e1214]:
+            - cell "R0085" [ref=e1215]
+            - cell "2026-07-17" [ref=e1216]
+            - cell "2026-07-21" [ref=e1217]
+            - cell "4" [ref=e1218]
+            - cell "Cancelled" [ref=e1219]
+            - cell "EVEN" [ref=e1220]
+            - cell "EMA" [ref=e1221]
+            - cell "TB" [ref=e1222]
+            - cell "8" [ref=e1223]
+            - cell "184.00" [ref=e1224]
+            - cell "160" [ref=e1225]
+            - cell "View →" [ref=e1226]:
+              - link "View →" [ref=e1227] [cursor=pointer]:
+                - /url: /reservations/R0085
+          - row "R0086 2026-08-19 2026-08-22 3 Reserved OTA WEB KS 1 182.00 128 View →" [ref=e1228]:
+            - cell "R0086" [ref=e1229]
+            - cell "2026-08-19" [ref=e1230]
+            - cell "2026-08-22" [ref=e1231]
+            - cell "3" [ref=e1232]
+            - cell "Reserved" [ref=e1233]
+            - cell "OTA" [ref=e1234]
+            - cell "WEB" [ref=e1235]
+            - cell "KS" [ref=e1236]
+            - cell "1" [ref=e1237]
+            - cell "182.00" [ref=e1238]
+            - cell "128" [ref=e1239]
+            - cell "View →" [ref=e1240]:
+              - link "View →" [ref=e1241] [cursor=pointer]:
+                - /url: /reservations/R0086
+          - row "R0087 2026-10-07 2026-10-10 3 Reserved BAR REC KS 1 215.00 160 View →" [ref=e1242]:
+            - cell "R0087" [ref=e1243]
+            - cell "2026-10-07" [ref=e1244]
+            - cell "2026-10-10" [ref=e1245]
+            - cell "3" [ref=e1246]
+            - cell "Reserved" [ref=e1247]
+            - cell "BAR" [ref=e1248]
+            - cell "REC" [ref=e1249]
+            - cell "KS" [ref=e1250]
+            - cell "1" [ref=e1251]
+            - cell "215.00" [ref=e1252]
+            - cell "160" [ref=e1253]
+            - cell "View →" [ref=e1254]:
+              - link "View →" [ref=e1255] [cursor=pointer]:
+                - /url: /reservations/R0087
+          - row "R0088 2026-08-31 2026-09-03 3 Reserved CNR REC KS 1 207.00 134 View →" [ref=e1256]:
+            - cell "R0088" [ref=e1257]
+            - cell "2026-08-31" [ref=e1258]
+            - cell "2026-09-03" [ref=e1259]
+            - cell "3" [ref=e1260]
+            - cell "Reserved" [ref=e1261]
+            - cell "CNR" [ref=e1262]
+            - cell "REC" [ref=e1263]
+            - cell "KS" [ref=e1264]
+            - cell "1" [ref=e1265]
+            - cell "207.00" [ref=e1266]
+            - cell "134" [ref=e1267]
+            - cell "View →" [ref=e1268]:
+              - link "View →" [ref=e1269] [cursor=pointer]:
+                - /url: /reservations/R0088
+          - row "R0089 2026-08-13 2026-08-14 1 Reserved OTA WEB KS 1 167.00 160 View →" [ref=e1270]:
+            - cell "R0089" [ref=e1271]
+            - cell "2026-08-13" [ref=e1272]
+            - cell "2026-08-14" [ref=e1273]
+            - cell "1" [ref=e1274]
+            - cell "Reserved" [ref=e1275]
+            - cell "OTA" [ref=e1276]
+            - cell "WEB" [ref=e1277]
+            - cell "KS" [ref=e1278]
+            - cell "1" [ref=e1279]
+            - cell "167.00" [ref=e1280]
+            - cell "160" [ref=e1281]
+            - cell "View →" [ref=e1282]:
+              - link "View →" [ref=e1283] [cursor=pointer]:
+                - /url: /reservations/R0089
+          - row "R0090 2026-10-05 2026-10-06 1 Reserved PROM WEB EX 1 235.00 160 View →" [ref=e1284]:
+            - cell "R0090" [ref=e1285]
+            - cell "2026-10-05" [ref=e1286]
+            - cell "2026-10-06" [ref=e1287]
+            - cell "1" [ref=e1288]
+            - cell "Reserved" [ref=e1289]
+            - cell "PROM" [ref=e1290]
+            - cell "WEB" [ref=e1291]
+            - cell "EX" [ref=e1292]
+            - cell "1" [ref=e1293]
+            - cell "235.00" [ref=e1294]
+            - cell "160" [ref=e1295]
+            - cell "View →" [ref=e1296]:
+              - link "View →" [ref=e1297] [cursor=pointer]:
+                - /url: /reservations/R0090
+          - row "R0091 2026-07-09 2026-07-11 2 Reserved PROM WEB KS 1 175.00 91 View →" [ref=e1298]:
+            - cell "R0091" [ref=e1299]
+            - cell "2026-07-09" [ref=e1300]
+            - cell "2026-07-11" [ref=e1301]
+            - cell "2" [ref=e1302]
+            - cell "Reserved" [ref=e1303]
+            - cell "PROM" [ref=e1304]
+            - cell "WEB" [ref=e1305]
+            - cell "KS" [ref=e1306]
+            - cell "1" [ref=e1307]
+            - cell "175.00" [ref=e1308]
+            - cell "91" [ref=e1309]
+            - cell "View →" [ref=e1310]:
+              - link "View →" [ref=e1311] [cursor=pointer]:
+                - /url: /reservations/R0091
+          - row "R0092 2026-10-05 2026-10-08 3 Cancelled CSR REC KS 1 199.00 160 View →" [ref=e1312]:
+            - cell "R0092" [ref=e1313]
+            - cell "2026-10-05" [ref=e1314]
+            - cell "2026-10-08" [ref=e1315]
+            - cell "3" [ref=e1316]
+            - cell "Cancelled" [ref=e1317]
+            - cell "CSR" [ref=e1318]
+            - cell "REC" [ref=e1319]
+            - cell "KS" [ref=e1320]
+            - cell "1" [ref=e1321]
+            - cell "199.00" [ref=e1322]
+            - cell "160" [ref=e1323]
+            - cell "View →" [ref=e1324]:
+              - link "View →" [ref=e1325] [cursor=pointer]:
+                - /url: /reservations/R0092
+          - row "R0093 2026-07-08 2026-07-10 2 Reserved CSR EMA KS 1 196.00 115 View →" [ref=e1326]:
+            - cell "R0093" [ref=e1327]
+            - cell "2026-07-08" [ref=e1328]
+            - cell "2026-07-10" [ref=e1329]
+            - cell "2" [ref=e1330]
+            - cell "Reserved" [ref=e1331]
+            - cell "CSR" [ref=e1332]
+            - cell "EMA" [ref=e1333]
+            - cell "KS" [ref=e1334]
+            - cell "1" [ref=e1335]
+            - cell "196.00" [ref=e1336]
+            - cell "115" [ref=e1337]
+            - cell "View →" [ref=e1338]:
+              - link "View →" [ref=e1339] [cursor=pointer]:
+                - /url: /reservations/R0093
+          - row "R0094 2026-09-05 2026-09-06 1 Reserved OTA WEB KS 1 182.00 156 View →" [ref=e1340]:
+            - cell "R0094" [ref=e1341]
+            - cell "2026-09-05" [ref=e1342]
+            - cell "2026-09-06" [ref=e1343]
+            - cell "1" [ref=e1344]
+            - cell "Reserved" [ref=e1345]
+            - cell "OTA" [ref=e1346]
+            - cell "WEB" [ref=e1347]
+            - cell "KS" [ref=e1348]
+            - cell "1" [ref=e1349]
+            - cell "182.00" [ref=e1350]
+            - cell "156" [ref=e1351]
+            - cell "View →" [ref=e1352]:
+              - link "View →" [ref=e1353] [cursor=pointer]:
+                - /url: /reservations/R0094
+          - row "R0095 2026-09-06 2026-09-09 3 Cancelled OTA WEB EX 1 236.00 160 View →" [ref=e1354]:
+            - cell "R0095" [ref=e1355]
+            - cell "2026-09-06" [ref=e1356]
+            - cell "2026-09-09" [ref=e1357]
+            - cell "3" [ref=e1358]
+            - cell "Cancelled" [ref=e1359]
+            - cell "OTA" [ref=e1360]
+            - cell "WEB" [ref=e1361]
+            - cell "EX" [ref=e1362]
+            - cell "1" [ref=e1363]
+            - cell "236.00" [ref=e1364]
+            - cell "160" [ref=e1365]
+            - cell "View →" [ref=e1366]:
+              - link "View →" [ref=e1367] [cursor=pointer]:
+                - /url: /reservations/R0095
+          - row "R0096 2026-09-07 2026-09-09 2 Reserved OTA WEB TB 1 160.00 160 View →" [ref=e1368]:
+            - cell "R0096" [ref=e1369]
+            - cell "2026-09-07" [ref=e1370]
+            - cell "2026-09-09" [ref=e1371]
+            - cell "2" [ref=e1372]
+            - cell "Reserved" [ref=e1373]
+            - cell "OTA" [ref=e1374]
+            - cell "WEB" [ref=e1375]
+            - cell "TB" [ref=e1376]
+            - cell "1" [ref=e1377]
+            - cell "160.00" [ref=e1378]
+            - cell "160" [ref=e1379]
+            - cell "View →" [ref=e1380]:
+              - link "View →" [ref=e1381] [cursor=pointer]:
+                - /url: /reservations/R0096
+          - row "R0097 2026-06-23 2026-06-26 3 Reserved OTA WEB KS 1 171.00 123 View →" [ref=e1382]:
+            - cell "R0097" [ref=e1383]
+            - cell "2026-06-23" [ref=e1384]
+            - cell "2026-06-26" [ref=e1385]
+            - cell "3" [ref=e1386]
+            - cell "Reserved" [ref=e1387]
+            - cell "OTA" [ref=e1388]
+            - cell "WEB" [ref=e1389]
+            - cell "KS" [ref=e1390]
+            - cell "1" [ref=e1391]
+            - cell "171.00" [ref=e1392]
+            - cell "123" [ref=e1393]
+            - cell "View →" [ref=e1394]:
+              - link "View →" [ref=e1395] [cursor=pointer]:
+                - /url: /reservations/R0097
+          - row "R0098 2026-06-09 2026-06-11 2 Reserved CSR REC KS 1 199.00 79 View →" [ref=e1396]:
+            - cell "R0098" [ref=e1397]
+            - cell "2026-06-09" [ref=e1398]
+            - cell "2026-06-11" [ref=e1399]
+            - cell "2" [ref=e1400]
+            - cell "Reserved" [ref=e1401]
+            - cell "CSR" [ref=e1402]
+            - cell "REC" [ref=e1403]
+            - cell "KS" [ref=e1404]
+            - cell "1" [ref=e1405]
+            - cell "199.00" [ref=e1406]
+            - cell "79" [ref=e1407]
+            - cell "View →" [ref=e1408]:
+              - link "View →" [ref=e1409] [cursor=pointer]:
+                - /url: /reservations/R0098
+          - row "R0099 2026-07-19 2026-07-21 2 Reserved BAR REC KS 1 233.00 86 View →" [ref=e1410]:
+            - cell "R0099" [ref=e1411]
+            - cell "2026-07-19" [ref=e1412]
+            - cell "2026-07-21" [ref=e1413]
+            - cell "2" [ref=e1414]
+            - cell "Reserved" [ref=e1415]
+            - cell "BAR" [ref=e1416]
+            - cell "REC" [ref=e1417]
+            - cell "KS" [ref=e1418]
+            - cell "1" [ref=e1419]
+            - cell "233.00" [ref=e1420]
+            - cell "86" [ref=e1421]
+            - cell "View →" [ref=e1422]:
+              - link "View →" [ref=e1423] [cursor=pointer]:
+                - /url: /reservations/R0099
+          - row "R0100 2026-09-15 2026-09-17 2 Reserved CSR REC KS 1 193.00 160 View →" [ref=e1424]:
+            - cell "R0100" [ref=e1425]
+            - cell "2026-09-15" [ref=e1426]
+            - cell "2026-09-17" [ref=e1427]
+            - cell "2" [ref=e1428]
+            - cell "Reserved" [ref=e1429]
+            - cell "CSR" [ref=e1430]
+            - cell "REC" [ref=e1431]
+            - cell "KS" [ref=e1432]
+            - cell "1" [ref=e1433]
+            - cell "193.00" [ref=e1434]
+            - cell "160" [ref=e1435]
+            - cell "View →" [ref=e1436]:
+              - link "View →" [ref=e1437] [cursor=pointer]:
+                - /url: /reservations/R0100
+      - generic [ref=e1438]:
+        - button "← Prev" [disabled] [ref=e1439]
+        - generic [ref=e1440]: Page 1 of 3
+        - button "Next →" [ref=e1441]
+  - contentinfo [ref=e36]: Synthetic dataset for the Revenue Manager Agent hackathon. Data is regenerated daily and is always forward-looking from today.
+  - alert [ref=e37]

@@ -1,0 +1,107 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Grand Harbour Hotel Reservations Portal" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: Grand Harbour Hotel
+        - generic [ref=e6]: Reservations Portal
+      - navigation [ref=e7]:
+        - link "Reservations" [ref=e8] [cursor=pointer]:
+          - /url: /reservations
+        - link "Reference" [ref=e9] [cursor=pointer]:
+          - /url: /reference
+        - link "Verify" [ref=e10] [cursor=pointer]:
+          - /url: /verify
+  - main [ref=e11]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Verification targets" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Live checksums for the dataset as of 2026-06-10. After you scrape and load the data, your numbers should match these exactly. If they do not, your scrape is incomplete or your business logic is off.
+      - generic [ref=e19]:
+        - heading "Row counts" [level=2] [ref=e20]
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: total_reservations
+            - generic [ref=e24]: "250"
+          - generic [ref=e25]:
+            - generic [ref=e26]: total_stay_rows
+            - generic [ref=e27]: "549"
+          - generic [ref=e28]:
+            - generic [ref=e29]: current_reservations
+            - generic [ref=e30]: "150"
+          - generic [ref=e31]:
+            - generic [ref=e32]: last_year_reservations
+            - generic [ref=e33]: "100"
+          - generic [ref=e34]:
+            - generic [ref=e35]: cancelled_reservations
+            - generic [ref=e36]: "24"
+      - generic [ref=e37]:
+        - heading "On the books (current, Reserved, stay_date ≥ today)" [level=2] [ref=e38]
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: otb_room_nights
+            - generic [ref=e42]: "514"
+          - generic [ref=e43]:
+            - generic [ref=e44]: otb_room_revenue_before_tax
+            - generic [ref=e45]: 96,130.00
+          - generic [ref=e46]:
+            - generic [ref=e47]: otb_total_revenue_before_tax
+            - generic [ref=e48]: 102,574.00
+      - generic [ref=e49]:
+        - heading "Same time last year (last_year, Reserved)" [level=2] [ref=e50]
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: stly_room_nights
+            - generic [ref=e54]: "413"
+          - generic [ref=e55]:
+            - generic [ref=e56]: stly_total_revenue_before_tax
+            - generic [ref=e57]: 82,066.00
+      - generic [ref=e58]:
+        - heading "ADR by room type (current, Reserved)" [level=2] [ref=e59]
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: KS
+            - generic [ref=e63]: "192.78"
+          - generic [ref=e64]:
+            - generic [ref=e65]: TB
+            - generic [ref=e66]: "178.87"
+          - generic [ref=e67]:
+            - generic [ref=e68]: EX
+            - generic [ref=e69]: "251.63"
+      - generic [ref=e70]:
+        - heading "On-the-books room nights by market code" [level=2] [ref=e71]
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: EVEN
+            - generic [ref=e75]: "96"
+          - generic [ref=e76]:
+            - generic [ref=e77]: CGR
+            - generic [ref=e78]: "85"
+          - generic [ref=e79]:
+            - generic [ref=e80]: OTA
+            - generic [ref=e81]: "82"
+          - generic [ref=e82]:
+            - generic [ref=e83]: CNI
+            - generic [ref=e84]: "63"
+          - generic [ref=e85]:
+            - generic [ref=e86]: CSR
+            - generic [ref=e87]: "49"
+          - generic [ref=e88]:
+            - generic [ref=e89]: BAR
+            - generic [ref=e90]: "35"
+          - generic [ref=e91]:
+            - generic [ref=e92]: CNR
+            - generic [ref=e93]: "33"
+          - generic [ref=e94]:
+            - generic [ref=e95]: SMERF
+            - generic [ref=e96]: "28"
+          - generic [ref=e97]:
+            - generic [ref=e98]: PROM
+            - generic [ref=e99]: "25"
+          - generic [ref=e100]:
+            - generic [ref=e101]: FIT
+            - generic [ref=e102]: "18"
+      - group [ref=e103]:
+        - generic "Raw JSON" [ref=e104] [cursor=pointer]
+  - contentinfo [ref=e13]: Synthetic dataset for the Revenue Manager Agent hackathon. Data is regenerated daily and is always forward-looking from today.
+  - alert [ref=e14]

@@ -1,0 +1,105 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Grand Harbour Hotel Reservations Portal" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: Grand Harbour Hotel
+        - generic [ref=e6]: Reservations Portal
+      - navigation [ref=e7]:
+        - link "Reservations" [ref=e8] [cursor=pointer]:
+          - /url: /reservations
+        - link "Reference" [ref=e9] [cursor=pointer]:
+          - /url: /reference
+        - link "Verify" [ref=e10] [cursor=pointer]:
+          - /url: /verify
+  - main [ref=e11]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - link "← Back to reservations" [ref=e17] [cursor=pointer]:
+          - /url: /reservations
+        - heading "R0001 Reserved" [level=1] [ref=e18]:
+          - generic [ref=e19]: R0001
+          - generic [ref=e20]: Reserved
+      - generic [ref=e21]:
+        - heading "Reservation fields" [level=2] [ref=e22]
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - term [ref=e25]: arrival_date
+            - definition [ref=e26]: 2026-07-23
+          - generic [ref=e27]:
+            - term [ref=e28]: departure_date
+            - definition [ref=e29]: 2026-07-26
+          - generic [ref=e30]:
+            - term [ref=e31]: nights
+            - definition [ref=e32]: "3"
+          - generic [ref=e33]:
+            - term [ref=e34]: reservation_status
+            - definition [ref=e35]: Reserved
+          - generic [ref=e36]:
+            - term [ref=e37]: create_datetime
+            - definition [ref=e38]: 2026-03-25T00:27:00Z
+          - generic [ref=e39]:
+            - term [ref=e40]: cancellation_datetime
+            - definition [ref=e41]: —
+          - generic [ref=e42]:
+            - term [ref=e43]: guest_country
+            - definition [ref=e44]: ES
+          - generic [ref=e45]:
+            - term [ref=e46]: is_block
+            - definition [ref=e47]: "false"
+          - generic [ref=e48]:
+            - term [ref=e49]: is_walk_in
+            - definition [ref=e50]: "false"
+          - generic [ref=e51]:
+            - term [ref=e52]: number_of_spaces
+            - definition [ref=e53]: "1"
+          - generic [ref=e54]:
+            - term [ref=e55]: space_type
+            - definition [ref=e56]: KS
+          - generic [ref=e57]:
+            - term [ref=e58]: market_code
+            - definition [ref=e59]: CSR
+          - generic [ref=e60]:
+            - term [ref=e61]: channel_code
+            - definition [ref=e62]: REC
+          - generic [ref=e63]:
+            - term [ref=e64]: source_name
+            - definition [ref=e65]: Brand website
+          - generic [ref=e66]:
+            - term [ref=e67]: rate_plan_code
+            - definition [ref=e68]: CORP10BB
+          - generic [ref=e69]:
+            - term [ref=e70]: adr_room
+            - definition [ref=e71]: "226.00"
+          - generic [ref=e72]:
+            - term [ref=e73]: lead_time
+            - definition [ref=e74]: "120"
+          - generic [ref=e75]:
+            - term [ref=e76]: company_name
+            - definition [ref=e77]: DraftKings
+          - generic [ref=e78]:
+            - term [ref=e79]: travel_agent_name
+            - definition [ref=e80]: TravelHub
+      - generic [ref=e81]:
+        - heading "Stay rows · one row per night (3)" [level=2] [ref=e82]
+        - table [ref=e84]:
+          - rowgroup [ref=e85]:
+            - row "stay_date daily_room_revenue_before_tax daily_total_revenue_before_tax" [ref=e86]:
+              - columnheader "stay_date" [ref=e87]
+              - columnheader "daily_room_revenue_before_tax" [ref=e88]
+              - columnheader "daily_total_revenue_before_tax" [ref=e89]
+          - rowgroup [ref=e90]:
+            - row "2026-07-23 226.00 244.00" [ref=e91]:
+              - cell "2026-07-23" [ref=e92]
+              - cell "226.00" [ref=e93]
+              - cell "244.00" [ref=e94]
+            - row "2026-07-24 226.00 244.00" [ref=e95]:
+              - cell "2026-07-24" [ref=e96]
+              - cell "226.00" [ref=e97]
+              - cell "244.00" [ref=e98]
+            - row "2026-07-25 226.00 244.00" [ref=e99]:
+              - cell "2026-07-25" [ref=e100]
+              - cell "226.00" [ref=e101]
+              - cell "244.00" [ref=e102]
+  - contentinfo [ref=e13]: Synthetic dataset for the Revenue Manager Agent hackathon. Data is regenerated daily and is always forward-looking from today.
+  - alert [ref=e14]
