@@ -1,6 +1,10 @@
 {
   "source": "https://otel-hackathon-data-site.vercel.app",
-  "scraped_at": "2026-06-10T23:49:28+00:00",
+  "scraped_at": "2026-06-11T17:49:34+00:00",
+  "dataset_metadata": {
+    "as_of_date": "2026-06-11",
+    "scraped_at": "2026-06-11T17:49:34+00:00"
+  },
   "room_type_lookup": [
     {
       "SPACE_TYPE": "EX",

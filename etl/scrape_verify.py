@@ -6,6 +6,7 @@ import json
 import re
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 from playwright.sync_api import Page, sync_playwright
@@ -240,6 +241,11 @@ def run_scrape_verify() -> int:
 
     write_json(config.OUTPUT_VERIFY, raw_verify)
     write_json(config.OUTPUT_VERIFY_TARGETS, targets)
+
+    raw_text = raw_verify.get("raw_text") or ""
+    raw_text_path = Path(config.OUTPUT_VERIFY_RAW_TEXT)
+    raw_text_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_text_path.write_text(raw_text, encoding="utf-8")
 
     print_checklist(targets, raw_verify)
 

@@ -14,10 +14,20 @@ from playwright.sync_api import Page, sync_playwright
 from etl import config
 
 RESERVATION_ID_RE = re.compile(r"^R\d+$", re.IGNORECASE)
+AS_OF_DATE_RE = re.compile(r"book as of (\d{4}-\d{2}-\d{2})", re.IGNORECASE)
 
 
 def polite_delay(page: Page) -> None:
     page.wait_for_timeout(config.REQUEST_DELAY_MS)
+
+
+def parse_as_of_date(list_header: str) -> str | None:
+    match = AS_OF_DATE_RE.search(list_header)
+    return match.group(1) if match else None
+
+
+def dataset_metadata(scraped_at: str, as_of_date: str | None) -> dict[str, str | None]:
+    return {"as_of_date": as_of_date, "scraped_at": scraped_at}
 
 
 def reservation_sort_key(reservation_id: str) -> tuple[int, str]:
@@ -298,18 +308,28 @@ def build_reservations_output(
             }
         )
 
+    scraped_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    as_of_date = parse_as_of_date(list_header)
     return {
         "source": config.BASE_URL,
-        "scraped_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "scraped_at": scraped_at,
         "list_header": list_header,
+        "dataset_metadata": dataset_metadata(scraped_at, as_of_date),
         "reservations": reservations,
     }
 
 
-def build_lookups_output(lookups: dict[str, list[dict[str, str]]]) -> dict:
+def build_lookups_output(
+    lookups: dict[str, list[dict[str, str]]],
+    *,
+    as_of_date: str | None,
+    scraped_at: str | None = None,
+) -> dict:
+    scraped_at = scraped_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     return {
         "source": config.BASE_URL,
-        "scraped_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "scraped_at": scraped_at,
+        "dataset_metadata": dataset_metadata(scraped_at, as_of_date),
         **lookups,
     }
 
@@ -416,7 +436,12 @@ def run_extract() -> int:
         browser.close()
 
     reservations_payload = build_reservations_output(list_header, list_rows, details_by_id)
-    lookups_payload = build_lookups_output(lookups)
+    as_of_date = reservations_payload["dataset_metadata"]["as_of_date"]
+    lookups_payload = build_lookups_output(
+        lookups,
+        as_of_date=as_of_date,
+        scraped_at=reservations_payload["scraped_at"],
+    )
 
     write_json(config.OUTPUT_RESERVATIONS, reservations_payload)
     write_json(config.OUTPUT_LOOKUPS, lookups_payload)
