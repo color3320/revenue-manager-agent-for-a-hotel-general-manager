@@ -13,6 +13,8 @@ from agent.semantic import (
     FACT_TABLE,
     RevenueMeasure,
     adr_by_room_type,
+    bind_params,
+    count_reservations,
     date_column,
     fetch_lookup_codes,
     fetch_room_capacity,
@@ -21,18 +23,13 @@ from agent.semantic import (
     make_envelope,
     otb_window_description,
     otb_stay_predicate,
-    params,
     quantize_money,
+    resolve_month,
     revenue_column,
+    stay_month_filter,
     sum_revenue,
     sum_room_nights,
 )
-
-
-def _month_filter(month: str | None) -> tuple[str, dict]:
-    if not month:
-        return "", {}
-    return " AND TO_CHAR(stay_date, 'YYYY-MM') = %(month)s", {"month": month}
 
 
 @tool
@@ -45,10 +42,14 @@ def describe_dataset() -> dict:
         scalars = fetch_verify_scalars(conn, as_of)
 
     return make_envelope(
-        headline=f"Dataset as of {as_of}: {scalars['total_reservations']} reservations, "
-        f"{capacity} physical rooms across {len(lookups['room_types'])} room types.",
+        headline=(
+            f"ANCHOR AS-OF {as_of} — ground every month name and OTB window on this date. "
+            f"{scalars['total_reservations']} reservations in dataset, "
+            f"{capacity} physical rooms across {len(lookups['room_types'])} room types."
+        ),
         key_numbers={
             "as_of_date": as_of,
+            "anchor_as_of_date": as_of,
             "room_capacity": capacity,
             "total_reservations": scalars["total_reservations"],
             "total_stay_rows": scalars["total_stay_rows"],
@@ -68,9 +69,14 @@ def describe_dataset() -> dict:
                 f"arrival_date < as_of_date - {CURRENT_LOOKBACK_DAYS} days"
             ),
             "cancelled_excluded": "By default for OTB/STLY/ADR; use cancellations tool for cancelled business",
+            "month_resolution_rule": (
+                "Month without year resolves to next occurrence on/after as-of "
+                "(e.g. as-of 2026-06-11: July -> 2026-07, June -> 2026-06)."
+            ),
         },
         caveats=[
             "Current vs last-year reservation split uses arrival_date with 180-day lookback.",
+            "Call describe_dataset first when a question names a month without a year.",
         ],
     )
 
@@ -81,18 +87,22 @@ def revenue_on_books(
     month: str | None = None,
     revenue_measure: Literal["total", "room"] = "total",
 ) -> dict:
-    """On-the-books room nights and revenue for future stays (Reserved, stay_date >= as_of)."""
+    """On-the-books reservations, room nights, and revenue (Reserved, stay_date >= as_of).
+
+    month: YYYY-MM or month name (resolved against as-of via resolve_month).
+    """
     measure = RevenueMeasure.TOTAL if revenue_measure == "total" else RevenueMeasure.ROOM
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
-        p = params(as_of)
+        resolved_month = resolve_month(month, as_of) if month else None
         where = otb_stay_predicate()
-        month_clause, month_params = _month_filter(month)
+        month_clause, month_params = stay_month_filter(resolved_month)
         full_where = where + month_clause
-        p = {**p, **month_params}
+        p = bind_params(as_of, month_params)
 
-        room_nights = sum_room_nights(conn, full_where, as_of)
-        revenue = sum_revenue(conn, full_where, measure, as_of)
+        room_nights = sum_room_nights(conn, full_where, as_of, month_params)
+        reservations = count_reservations(conn, full_where, as_of, month_params)
+        revenue = sum_revenue(conn, full_where, measure, as_of, month_params)
 
         breakdown = []
         if group_by == "month":
@@ -100,6 +110,7 @@ def revenue_on_books(
             rev_col = revenue_column(measure)
             sql = f"""
             SELECT TO_CHAR({col}, 'YYYY-MM') AS period,
+                   COUNT(DISTINCT reservation_id) AS reservations,
                    COALESCE(SUM(number_of_spaces), 0) AS room_nights,
                    COALESCE(SUM({rev_col}), 0) AS revenue
             FROM {FACT_TABLE}
@@ -111,6 +122,7 @@ def revenue_on_books(
             breakdown = [
                 {
                     "month": r["period"],
+                    "reservations": int(r["reservations"]),
                     "room_nights": int(r["room_nights"]),
                     "revenue": float(quantize_money(r["revenue"])),
                 }
@@ -119,13 +131,14 @@ def revenue_on_books(
 
     rev_label = "total revenue" if measure == RevenueMeasure.TOTAL else "room revenue"
     headline = (
-        f"OTB: {room_nights:,} room nights, "
+        f"OTB: {reservations:,} reservations, {room_nights:,} room nights, "
         f"${revenue:,.2f} {rev_label} (as of {as_of})"
     )
-    if month:
-        headline += f" for {month}"
+    if resolved_month:
+        headline += f" for {resolved_month}"
 
     key_numbers: dict = {
+        "reservations": reservations,
         "room_nights": room_nights,
         "revenue": float(revenue),
         "revenue_measure": measure.value,
@@ -143,12 +156,14 @@ def revenue_on_books(
             "revenue_field": revenue_column(measure),
             "cancelled_excluded": True,
             "status_filter": "Reserved",
-            "month_filter": month,
+            "month_filter": resolved_month,
+            "month_input": month,
             "group_by": group_by,
         },
         caveats=[
             "OTB uses stay_date, not arrival_date or create_datetime.",
             "Total revenue includes package effects; use revenue_measure='room' for room-only.",
+            "reservations = COUNT(DISTINCT reservation_id); room_nights = SUM(number_of_spaces).",
         ],
     )
 
@@ -160,15 +175,18 @@ def segment_mix(
     filter_corporate: bool = False,
     revenue_measure: Literal["total", "room"] = "total",
 ) -> dict:
-    """OTB segment breakdown with room nights, revenue, and share percentages."""
+    """OTB segment breakdown with room nights, revenue, and share percentages.
+
+    month: YYYY-MM or month name (resolved against as-of).
+    """
     measure = RevenueMeasure.TOTAL if revenue_measure == "total" else RevenueMeasure.ROOM
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
-        p = params(as_of)
+        resolved_month = resolve_month(month, as_of) if month else None
         where = otb_stay_predicate()
-        month_clause, month_params = _month_filter(month)
+        month_clause, month_params = stay_month_filter(resolved_month)
         full_where = where + month_clause
-        p = {**p, **month_params}
+        p = bind_params(as_of, month_params)
 
         if dimension == "macro_group":
             dim_expr = "m.macro_group"
@@ -192,6 +210,7 @@ def segment_mix(
         rev_col = revenue_column(measure)
         sql = f"""
         SELECT {dim_expr} AS segment,
+               COUNT(DISTINCT reservation_id) AS reservations,
                COALESCE(SUM(number_of_spaces), 0) AS room_nights,
                COALESCE(SUM({rev_col}), 0) AS revenue
         FROM {FACT_TABLE}
@@ -201,6 +220,7 @@ def segment_mix(
         ORDER BY revenue DESC
         """
         rows = fetch_all(conn, sql, p)
+        total_reservations = count_reservations(conn, full_where, as_of, month_params)
         total_nights = sum(int(r["room_nights"]) for r in rows)
         total_rev = sum(quantize_money(r["revenue"]) for r in rows)
 
@@ -214,6 +234,7 @@ def segment_mix(
             )
             segments.append({
                 "segment": r["segment"],
+                "reservations": int(r["reservations"]),
                 "room_nights": nights,
                 "revenue": float(rev),
                 "share_pct_nights": share_nights,
@@ -222,15 +243,19 @@ def segment_mix(
             })
 
     dim_label = dimension.replace("_", " ")
-    headline = f"OTB segment mix by {dim_label}: {len(segments)} segments, {total_nights:,} room nights"
-    if month:
-        headline += f" in {month}"
+    headline = (
+        f"OTB segment mix by {dim_label}: {len(segments)} segments, "
+        f"{total_reservations:,} reservations, {total_nights:,} room nights"
+    )
+    if resolved_month:
+        headline += f" in {resolved_month}"
     if filter_corporate:
         headline += " (corporate only)"
 
     return make_envelope(
         headline=headline,
         key_numbers={
+            "total_reservations": total_reservations,
             "total_room_nights": total_nights,
             "total_revenue": float(total_rev),
             "segments": segments,
@@ -242,7 +267,8 @@ def segment_mix(
             "revenue_field": revenue_column(measure),
             "cancelled_excluded": True,
             "dimension": dimension,
-            "month_filter": month,
+            "month_filter": resolved_month,
+            "month_input": month,
             "filter_corporate": filter_corporate,
         },
         caveats=[

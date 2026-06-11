@@ -12,6 +12,8 @@ from agent.semantic import (
     FACT_TABLE,
     OTA_MARKET_CODE,
     RevenueMeasure,
+    bind_params,
+    cancellation_month_filter,
     cancelled_only_clause,
     date_column,
     get_as_of_date,
@@ -19,16 +21,12 @@ from agent.semantic import (
     otb_stay_predicate,
     params,
     quantize_money,
+    resolve_month,
     revenue_column,
+    stay_month_filter,
     sum_revenue,
     sum_room_nights,
 )
-
-
-def _month_filter(month: str | None) -> tuple[str, dict]:
-    if not month:
-        return "", {}
-    return " AND TO_CHAR(stay_date, 'YYYY-MM') = %(month)s", {"month": month}
 
 
 @tool
@@ -169,15 +167,14 @@ def concentration(top_n: int = 10, large_booking_rooms: int = 5) -> dict:
 
 @tool
 def cancellations(month: str | None = None) -> dict:
-    """Cancelled reservation count, optionally filtered by cancellation month (YYYY-MM)."""
+    """Cancelled reservation count, optionally filtered by cancellation month (YYYY-MM or name)."""
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
-        p = params(as_of)
-
+        resolved_month = resolve_month(month, as_of) if month else None
         where = cancelled_only_clause()
-        if month:
-            where += " AND TO_CHAR(cancellation_datetime, 'YYYY-MM') = %(month)s"
-            p = {**p, "month": month}
+        month_clause, month_params = cancellation_month_filter(resolved_month)
+        where += month_clause
+        p = bind_params(as_of, month_params)
 
         sql = f"""
         SELECT COUNT(DISTINCT reservation_id)
@@ -200,7 +197,7 @@ def cancellations(month: str | None = None) -> dict:
         """
         lost_revenue = quantize_money(fetch_scalar(conn, revenue_sql, p))
 
-    period = month or "all time"
+    period = resolved_month or "all time"
     return make_envelope(
         headline=f"{count} cancelled reservations ({room_nights:,} room nights, ${lost_revenue:,.2f} lost revenue) — {period}",
         key_numbers={
@@ -214,25 +211,30 @@ def cancellations(month: str | None = None) -> dict:
             "revenue_field": revenue_column(RevenueMeasure.TOTAL),
             "cancelled_excluded": False,
             "status_filter": "Cancelled",
-            "month_filter": month,
+            "month_filter": resolved_month,
+            "month_input": month,
         },
         caveats=[
             "Uses cancellation_datetime for period filter, not stay_date.",
             "Lost revenue is sum of stay-row revenue for cancelled reservations.",
+            "Month without year resolves to next occurrence on/after as-of.",
         ],
     )
 
 
 @tool
 def group_vs_transient(month: str | None = None) -> dict:
-    """OTB split between group (is_block) and transient business."""
+    """OTB split between group (is_block) and transient business.
+
+    month: YYYY-MM or month name (resolved against as-of).
+    """
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
-        p = params(as_of)
+        resolved_month = resolve_month(month, as_of) if month else None
         where = otb_stay_predicate()
-        month_clause, month_params = _month_filter(month)
+        month_clause, month_params = stay_month_filter(resolved_month)
         full_where = where + month_clause
-        p = {**p, **month_params}
+        p = bind_params(as_of, month_params)
         rev_col = revenue_column(RevenueMeasure.TOTAL)
 
         sql = f"""
@@ -270,7 +272,7 @@ def group_vs_transient(month: str | None = None) -> dict:
             )
 
     group = segments.get("group", {"room_nights": 0, "revenue": 0.0, "share_pct_revenue": 0.0})
-    period = f" in {month}" if month else ""
+    period = f" in {resolved_month}" if resolved_month else ""
     return make_envelope(
         headline=(
             f"Group business{period}: {group.get('share_pct_revenue', 0)}% of OTB revenue "
@@ -289,9 +291,11 @@ def group_vs_transient(month: str | None = None) -> dict:
             "revenue_field": rev_col,
             "cancelled_excluded": True,
             "group_definition": "is_block = true",
-            "month_filter": month,
+            "month_filter": resolved_month,
+            "month_input": month,
         },
         caveats=[
             "Group defined by is_block flag on reservation, not macro_group.",
+            "reservations = COUNT(DISTINCT reservation_id) per segment.",
         ],
     )

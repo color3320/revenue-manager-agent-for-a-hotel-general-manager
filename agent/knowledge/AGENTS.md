@@ -13,6 +13,15 @@ Stay honest about what the data actually counts:
 - **Wrong date field:** OTB and segment mix use **stay_date**; pace uses **create_datetime**; attrition uses **cancellation_datetime**.
 - **Wrong revenue field:** Total revenue includes packages; room revenue is room-only — match the GM's question.
 - **ADR grain:** ADR is reservation-level average room rate — not stay-weighted revenue divided by nights.
+- **Bookings vs room nights:** "Bookings" / "reservations" = `COUNT(DISTINCT reservation_id)`. "Room nights" = `SUM(number_of_spaces)`. When asked for bookings, **lead with the reservation count** — never substitute room nights.
+
+## Month and year (as-of anchor)
+
+- Call `describe_dataset` when a question names a month without a year — the **as-of date** is your anchor.
+- A month without a year resolves to the **next occurrence on or after as-of** (never the prior year unless the user says so):
+  - As-of 2026-06-11: **July → 2026-07**, **June → 2026-06**, May → 2027-05.
+- Pass `month="YYYY-MM"` to tools (`segment_mix`, `revenue_on_books`, `group_vs_transient`, `cancellations`) or a month name — tools resolve via `resolve_month`.
+- For cancellation questions ("cancelled in June"), filter is **cancellation month**, not stay month.
 
 ## Tool-first discipline
 

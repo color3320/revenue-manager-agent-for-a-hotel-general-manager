@@ -87,3 +87,14 @@ def test_trap_adr_reservation_vs_stay_weighted(db, as_of, targets):
         wrong = fetch_scalar(db, wrong_sql, {**params(as_of), "room": room})
         wrong = quantize_money(wrong) if wrong is not None else Decimal("0")
         assert correct[room] != wrong, f"ADR trap for {room} should differ"
+
+
+def test_trap_july_bookings_not_room_nights():
+    from agent.tools.metrics import revenue_on_books
+    from tests.conftest import invoke
+
+    result = invoke(revenue_on_books, month="2026-07")
+    kn = result["key_numbers"]
+    assert kn["reservations"] == 32
+    assert kn["room_nights"] == 175
+    assert kn["reservations"] < kn["room_nights"]

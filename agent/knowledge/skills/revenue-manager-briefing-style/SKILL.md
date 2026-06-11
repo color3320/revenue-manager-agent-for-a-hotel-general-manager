@@ -37,6 +37,7 @@ Structure beats the metrics:
 - Risk: one primary risk, not a laundry list. Secondary risks get one clause.
 - Action: verbs first — "Fence BAR on REC," "Release group block on Aug 12," "Audit OTA parity for September."
 - Round for speech: "$102.6k OTB revenue" not "$102,574.00" unless precision matters for reconciliation.
+- **Currency:** USD ($) only — never mix $ and £ in the same briefing.
 - Name segments in plain English once, then use codes if needed: "Corporate negotiated (CSR)."
 
 ## Trap

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from decimal import Decimal, ROUND_HALF_UP
 from enum import Enum
 from typing import Any, Literal
@@ -120,19 +121,95 @@ def params(as_of_date: str) -> dict[str, str]:
     return {"as_of_date": as_of_date}
 
 
+def bind_params(
+    as_of_date: str,
+    extra: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Merge as-of with optional bind values (e.g. month) for parameterized WHERE clauses."""
+    return {**params(as_of_date), **(extra or {})}
+
+
+_MONTH_NAMES: dict[str, int] = {
+    "jan": 1,
+    "january": 1,
+    "feb": 2,
+    "february": 2,
+    "mar": 3,
+    "march": 3,
+    "apr": 4,
+    "april": 4,
+    "may": 5,
+    "jun": 6,
+    "june": 6,
+    "jul": 7,
+    "july": 7,
+    "aug": 8,
+    "august": 8,
+    "sep": 9,
+    "sept": 9,
+    "september": 9,
+    "oct": 10,
+    "october": 10,
+    "nov": 11,
+    "november": 11,
+    "dec": 12,
+    "december": 12,
+}
+
+
+def resolve_month(month: str, as_of: str) -> str:
+    """Map YYYY-MM or a month name to the next calendar month on/after as-of (never prior year)."""
+    raw = month.strip()
+    if re.fullmatch(r"\d{4}-\d{2}", raw):
+        return raw
+    key = raw.lower()
+    if key not in _MONTH_NAMES:
+        raise ValueError(
+            f"Unrecognized month {month!r}; use YYYY-MM (e.g. 2026-07) or a month name."
+        )
+    month_num = _MONTH_NAMES[key]
+    as_of_d = parse_as_of(as_of)
+    year = as_of_d.year
+    if month_num < as_of_d.month:
+        year += 1
+    return f"{year}-{month_num:02d}"
+
+
+def stay_month_filter(month: str | None) -> tuple[str, dict[str, str]]:
+    """SQL fragment + bind dict for filtering OTB/stay metrics by stay month (YYYY-MM)."""
+    if not month:
+        return "", {}
+    return " AND TO_CHAR(stay_date, 'YYYY-MM') = %(month)s", {"month": month}
+
+
+def cancellation_month_filter(month: str | None) -> tuple[str, dict[str, str]]:
+    """SQL fragment + bind dict for filtering cancellations by cancellation month."""
+    if not month:
+        return "", {}
+    return (
+        " AND TO_CHAR(cancellation_datetime, 'YYYY-MM') = %(month)s",
+        {"month": month},
+    )
+
+
 # --- Trap helpers: correct counting rules ---
 
 def count_reservations(
     conn: psycopg.Connection,
     where: str = "TRUE",
     as_of_date: str | None = None,
+    extra_params: dict[str, Any] | None = None,
 ) -> int:
     sql = f"""
     SELECT COUNT(DISTINCT reservation_id)
     FROM {FACT_TABLE}
     WHERE {where}
     """
-    p = params(as_of_date) if as_of_date else {}
+    p: dict[str, Any] = {}
+    if as_of_date:
+        p = bind_params(as_of_date, extra_params)
+    elif extra_params:
+        p = dict(extra_params)
     return int(fetch_scalar(conn, sql, p) or 0)
 
 
@@ -154,13 +231,14 @@ def sum_room_nights(
     conn: psycopg.Connection,
     where: str,
     as_of_date: str,
+    extra_params: dict[str, Any] | None = None,
 ) -> int:
     sql = f"""
     SELECT COALESCE(SUM(number_of_spaces), 0)
     FROM {FACT_TABLE}
     WHERE {where}
     """
-    return int(fetch_scalar(conn, sql, params(as_of_date)) or 0)
+    return int(fetch_scalar(conn, sql, bind_params(as_of_date, extra_params)) or 0)
 
 
 def sum_revenue(
@@ -168,6 +246,7 @@ def sum_revenue(
     where: str,
     measure: RevenueMeasure,
     as_of_date: str,
+    extra_params: dict[str, Any] | None = None,
 ) -> Decimal:
     col = revenue_column(measure)
     sql = f"""
@@ -175,7 +254,7 @@ def sum_revenue(
     FROM {FACT_TABLE}
     WHERE {where}
     """
-    return quantize_money(fetch_scalar(conn, sql, params(as_of_date)))
+    return quantize_money(fetch_scalar(conn, sql, bind_params(as_of_date, extra_params)))
 
 
 def adr_weighted(room_revenue: Decimal, room_nights: int) -> Decimal | None:

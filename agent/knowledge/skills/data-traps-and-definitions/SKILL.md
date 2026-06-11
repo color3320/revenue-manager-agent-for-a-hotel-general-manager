@@ -21,6 +21,7 @@ Do not restate formulas here; the tool envelope is the definition.
 Before quoting a number, check:
 
 - **What is being counted?** Reservations, room nights, stay rows, or revenue — they differ by design.
+- **Bookings question?** Lead with `reservations` from the tool envelope. Room nights are supplementary, not interchangeable (e.g. July may be 32 bookings vs 175 room nights).
 - **Which window?** OTB (forward stays), STLY (past comparable stays), current (180-day arrival lookback), pace (booking date), or cancellation date.
 - **Which revenue?** Total (room + package) vs room-only — match the question.
 - **Capacity context:** 98 physical rooms (`describe_dataset` → `room_capacity`) — nights share vs capacity matters for compression.
