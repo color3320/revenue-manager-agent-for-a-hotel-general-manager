@@ -1,4 +1,10 @@
+import os
+
 BASE_URL = "https://otel-hackathon-data-site.vercel.app"
+DATABASE_URL = os.environ.get(
+    "DATABASE_URL",
+    "postgresql://hackathon:hackathon@localhost:5432/hotel_hackathon",
+)
 REQUEST_DELAY_MS = 400
 DETAIL_MAX_RETRIES = 3
 NAVIGATION_TIMEOUT_MS = 30_000
