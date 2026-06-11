@@ -1,0 +1,15 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "Revenue Manager Agent" [level=1] [ref=e3]
+    - paragraph [ref=e4]: Grand Harbour Hotel — commercial intelligence for the General Manager
+  - main [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e14]: Are we too dependent on OTA, and what should we do?
+      - generic [ref=e8]:
+        - textbox "Ask about revenue, pace, segments, risk…" [ref=e9]
+        - button "Send" [ref=e10] [cursor=pointer]
+    - complementary [ref=e11]:
+      - heading "Agent activity" [level=2] [ref=e12]
+      - generic [ref=e16]:
+        - generic [ref=e17]: Error
+        - text: "TypeError: Failed to execute 'fetch' on 'Window': Request cannot be constructed from a URL that includes credentials: /api/chat"

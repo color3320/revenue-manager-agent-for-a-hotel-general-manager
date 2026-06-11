@@ -1,0 +1,15 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "Revenue Manager Agent" [level=1] [ref=e3]
+    - paragraph [ref=e4]: Grand Harbour Hotel — commercial intelligence for the General Manager
+  - main [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e14]: What is our as-of date?
+      - generic [ref=e8]:
+        - textbox "Ask about revenue, pace, segments, risk…" [ref=e9]
+        - button "Send" [ref=e10] [cursor=pointer]
+    - complementary [ref=e11]:
+      - heading "Agent activity" [level=2] [ref=e12]
+      - generic [ref=e16]:
+        - generic [ref=e17]: Error
+        - text: "The SqliteSaver does not support async methods. Consider using AsyncSqliteSaver instead. from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver Note: AsyncSqliteSaver requires the aiosqlite package to use. Install with: `pip install aiosqlite` See https://langchain-ai.github.io/langgraph/reference/checkpoints/#langgraph.checkpoint.sqlite.aio.AsyncSqliteSaverfor more information."
