@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: revenue-manager-agent
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: AGENT_MODEL
+        value: anthropic:claude-sonnet-4-6
+      - key: BASIC_AUTH_USER
+        sync: false
+      - key: BASIC_AUTH_PASS
+        sync: false

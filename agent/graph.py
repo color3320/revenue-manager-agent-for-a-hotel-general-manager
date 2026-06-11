@@ -10,7 +10,15 @@ from deepagents.backends import CompositeBackend, FilesystemBackend, StateBacken
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.store.memory import InMemoryStore
 
-from agent.config import BRIEFINGS_DIR, CHECKPOINT_SQLITE, KNOWLEDGE_ROOT, MODEL, SYSTEM_PROMPT_PATH
+from agent.config import (
+    BRIEFINGS_DIR,
+    CHECKPOINT_DATABASE_URL,
+    CHECKPOINT_SQLITE,
+    ENV,
+    KNOWLEDGE_ROOT,
+    MODEL,
+    SYSTEM_PROMPT_PATH,
+)
 from agent.tools import ALL_TOOLS
 
 # Purpose-built tools only — analyst fetches; orchestrator keeps run_sql behind HITL.
@@ -53,8 +61,16 @@ def _knowledge_backend() -> CompositeBackend:
     )
 
 
+def use_postgres_checkpointer() -> bool:
+    """True when production env expects a Postgres-backed checkpointer."""
+    return ENV == "production" or bool(CHECKPOINT_DATABASE_URL)
+
+
 def _make_checkpointer() -> Any:
     """SQLite file for durable local threads; falls back to MemorySaver if sqlite extra missing."""
+    if use_postgres_checkpointer():
+        # AsyncPostgresSaver is wired in api.main lifespan — sync fallback for CLI only.
+        return MemorySaver()
     if CHECKPOINT_SQLITE:
         try:
             import sqlite3

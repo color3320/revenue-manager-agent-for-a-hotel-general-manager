@@ -16,3 +16,15 @@ BRIEFINGS_DIR = KNOWLEDGE_ROOT / "briefings"
 
 # Dev persistence: MemorySaver in-process; set CHECKPOINT_SQLITE for durable local threads.
 CHECKPOINT_SQLITE = os.environ.get("CHECKPOINT_SQLITE", str(REPO_ROOT / "data" / "agent_checkpoints.db"))
+
+# production | development — production uses Postgres checkpointer when CHECKPOINT_DATABASE_URL is set.
+ENV: str = os.environ.get("ENV", "development")
+
+# Postgres checkpointer URL; defaults to DATABASE_URL in production.
+CHECKPOINT_DATABASE_URL: str | None = os.environ.get("CHECKPOINT_DATABASE_URL") or (
+    os.environ.get("DATABASE_URL") if ENV == "production" else None
+)
+
+# HTTP basic auth for the public agent URL (Render deploy).
+BASIC_AUTH_USER: str | None = os.environ.get("BASIC_AUTH_USER")
+BASIC_AUTH_PASS: str | None = os.environ.get("BASIC_AUTH_PASS")
