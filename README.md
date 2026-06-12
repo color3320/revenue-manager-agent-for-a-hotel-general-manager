@@ -2,13 +2,13 @@
 
 ## Deploy (Part 8)
 
-See [docs/DEPLOY.md](docs/DEPLOY.md) for Supabase load, Render deploy, and submission checklist.
+See [docs/DEPLOY.md](docs/DEPLOY.md) for Render Postgres + Web Service deploy.
 
-Quick start after Supabase `DATABASE_URL` is set:
+Quick start after Render Postgres **External URL** is set:
 
 ```powershell
 python scripts/load_hosted_db.py
 python -m agent.eval "What is our as-of date?"
 ```
 
-Live service: Docker on Render (Starter+ plan), Basic Auth, SSE chat UI at `/`.
+Or use Blueprint: `render.yaml` creates **hotel-db** + **revenue-manager-agent** together.
