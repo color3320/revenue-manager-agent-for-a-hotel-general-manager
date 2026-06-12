@@ -292,6 +292,20 @@ def adr_by_room_type(conn: psycopg.Connection, as_of_date: str) -> dict[str, Dec
     return {row["space_type"]: quantize_money(row["adr"]) for row in rows}
 
 
+def adr_by_room_type_detail(
+    conn: psycopg.Connection, as_of_date: str
+) -> list[dict[str, str | float]]:
+    rows = fetch_all(conn, SQL_ADR_BY_ROOM_TYPE, params(as_of_date))
+    return [
+        {
+            "code": row["space_type"],
+            "name": row["display_name"],
+            "adr": float(quantize_money(row["adr"])),
+        }
+        for row in rows
+    ]
+
+
 def otb_nights_by_market(conn: psycopg.Connection, as_of_date: str) -> dict[str, int]:
     rows = fetch_all(conn, SQL_OTB_NIGHTS_BY_MARKET, params(as_of_date))
     return {row["market_code"]: int(row["room_nights"]) for row in rows}
@@ -300,6 +314,17 @@ def otb_nights_by_market(conn: psycopg.Connection, as_of_date: str) -> dict[str,
 def fetch_room_capacity(conn: psycopg.Connection) -> int:
     sql = "SELECT COALESCE(SUM(number_of_rooms), 0) FROM room_type_lookup"
     return int(fetch_scalar(conn, sql) or 0)
+
+
+def label_maps_from_lookups(
+    lookups: dict[str, list[dict[str, str]]],
+) -> dict[str, dict[str, str]]:
+    """Flatten lookup arrays into code→name maps for GM labeling."""
+    return {
+        "market_code": {item["code"]: item["name"] for item in lookups["market_codes"]},
+        "channel_code": {item["code"]: item["name"] for item in lookups["channel_codes"]},
+        "space_type": {item["code"]: item["name"] for item in lookups["room_types"]},
+    }
 
 
 def fetch_lookup_codes(

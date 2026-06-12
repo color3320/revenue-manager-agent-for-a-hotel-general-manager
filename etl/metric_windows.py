@@ -115,17 +115,19 @@ WHERE {stly_stay_predicate()}
 """
 
 SQL_ADR_BY_ROOM_TYPE = f"""
-SELECT space_type,
-       ROUND(AVG(adr_room), 2) AS adr
+SELECT r.space_type,
+       l.display_name,
+       ROUND(AVG(r.adr_room), 2) AS adr
 FROM (
   SELECT DISTINCT ON (reservation_id)
     reservation_id, space_type, adr_room
   FROM reservations_hackathon
   WHERE {adr_reservation_predicate()}
   ORDER BY reservation_id
-) current_reserved
-GROUP BY space_type
-ORDER BY space_type
+) r
+JOIN room_type_lookup l ON r.space_type = l.space_type
+GROUP BY r.space_type, l.display_name
+ORDER BY r.space_type
 """
 
 SQL_OTB_NIGHTS_BY_MARKET = f"""

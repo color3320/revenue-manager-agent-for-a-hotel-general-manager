@@ -13,6 +13,7 @@ from agent.semantic import (
     FACT_TABLE,
     RevenueMeasure,
     adr_by_room_type,
+    adr_by_room_type_detail,
     bind_params,
     count_reservations,
     date_column,
@@ -20,6 +21,7 @@ from agent.semantic import (
     fetch_room_capacity,
     fetch_verify_scalars,
     get_as_of_date,
+    label_maps_from_lookups,
     make_envelope,
     otb_window_description,
     otb_stay_predicate,
@@ -38,6 +40,7 @@ def describe_dataset() -> dict:
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
         lookups = fetch_lookup_codes(conn)
+        label_maps = label_maps_from_lookups(lookups)
         capacity = fetch_room_capacity(conn)
         scalars = fetch_verify_scalars(conn, as_of)
 
@@ -58,6 +61,7 @@ def describe_dataset() -> dict:
             "market_codes": lookups["market_codes"],
             "channel_codes": lookups["channel_codes"],
             "room_types": lookups["room_types"],
+            "label_maps": label_maps,
         },
         filters_and_definitions={
             "as_of_date": as_of,
@@ -73,6 +77,7 @@ def describe_dataset() -> dict:
                 "Month without year resolves to next occurrence on/after as-of "
                 "(e.g. as-of 2026-06-11: July -> 2026-07, June -> 2026-06)."
             ),
+            "segment_label_maps": label_maps,
         },
         caveats=[
             "Current vs last-year reservation split uses arrival_date with 180-day lookback.",
@@ -190,33 +195,41 @@ def segment_mix(
 
         if dimension == "macro_group":
             dim_expr = "m.macro_group"
+            name_expr = "m.macro_group"
             join = f"""
             JOIN market_code_lookup m ON {FACT_TABLE}.market_code = m.market_code
             """
+            group_by = "m.macro_group"
             if filter_corporate:
                 full_where += " AND m.macro_group = 'Corporate'"
         elif dimension == "channel_code":
-            dim_expr = f"{FACT_TABLE}.channel_code"
-            join = ""
+            dim_expr = "c.channel_code"
+            name_expr = "c.channel_name"
+            join = f"""
+            JOIN channel_code_lookup c ON {FACT_TABLE}.channel_code = c.channel_code
+            """
+            group_by = "c.channel_code, c.channel_name"
         else:
-            dim_expr = f"{FACT_TABLE}.market_code"
-            join = ""
+            dim_expr = "m.market_code"
+            name_expr = "m.market_name"
+            join = f"""
+            JOIN market_code_lookup m ON {FACT_TABLE}.market_code = m.market_code
+            """
+            group_by = "m.market_code, m.market_name"
             if filter_corporate:
-                join = f"""
-                JOIN market_code_lookup m ON {FACT_TABLE}.market_code = m.market_code
-                """
                 full_where += " AND m.macro_group = 'Corporate'"
 
         rev_col = revenue_column(measure)
         sql = f"""
         SELECT {dim_expr} AS segment,
+               {name_expr} AS segment_name,
                COUNT(DISTINCT reservation_id) AS reservations,
                COALESCE(SUM(number_of_spaces), 0) AS room_nights,
                COALESCE(SUM({rev_col}), 0) AS revenue
         FROM {FACT_TABLE}
         {join}
         WHERE {full_where}
-        GROUP BY {dim_expr}
+        GROUP BY {group_by}
         ORDER BY revenue DESC
         """
         rows = fetch_all(conn, sql, p)
@@ -234,6 +247,7 @@ def segment_mix(
             )
             segments.append({
                 "segment": r["segment"],
+                "segment_name": r["segment_name"],
                 "reservations": int(r["reservations"]),
                 "room_nights": nights,
                 "revenue": float(rev),
@@ -284,23 +298,31 @@ def adr_analysis() -> dict:
     with get_connection() as conn:
         as_of = get_as_of_date(conn)
         adr_map = adr_by_room_type(conn, as_of)
+        room_types = adr_by_room_type_detail(conn, as_of)
 
     if not adr_map:
         highest = None
+        highest_name = None
     else:
         highest = max(adr_map, key=lambda k: adr_map[k])
+        highest_name = next(
+            (rt["name"] for rt in room_types if rt["code"] == highest),
+            highest,
+        )
 
     by_type = {k: float(v) for k, v in sorted(adr_map.items())}
 
     return make_envelope(
         headline=(
-            f"Highest ADR room type: {highest} at ${adr_map[highest]:,.2f}"
+            f"Highest ADR room type: {highest_name} ({highest}) at ${adr_map[highest]:,.2f}"
             if highest
             else "No ADR data"
         ),
         key_numbers={
             "adr_by_room_type": by_type,
+            "room_types": room_types,
             "highest_adr_type": highest,
+            "highest_adr_type_name": highest_name,
             "highest_adr": float(adr_map[highest]) if highest else None,
         },
         filters_and_definitions={

@@ -46,6 +46,13 @@ SECTION_11_QUESTIONS: list[str] = [
     "Is our business concentrated in a few large bookings?",
 ]
 
+# Presentation smoke — BLUF, lookup names, no database vocabulary.
+PRESENTATION_SMOKE_QUESTIONS: list[str] = [
+    "What is the average booking lead time by market segment for July on-the-books stays?",
+    "Which segments are driving July?",
+    "Which room type is generating the highest ADR?",
+]
+
 # Hard questions probing judgment and data traps.
 HARD_QUESTIONS: list[str] = [
     "Are we too dependent on OTA, and what should we do?",
@@ -356,6 +363,10 @@ def main(argv: list[str] | None = None) -> int:
 
     if argv[0] == "--hitl":
         run_hitl_demo(agent)
+        return 0
+
+    if argv[0] == "--presentation":
+        run_suite(agent, PRESENTATION_SMOKE_QUESTIONS, label="Presentation smoke")
         return 0
 
     if argv[0] == "--all":
