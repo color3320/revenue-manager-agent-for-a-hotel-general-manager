@@ -9,7 +9,7 @@ COPY agent/ agent/
 COPY api/ api/
 COPY static/ static/
 COPY prompts/ prompts/
-COPY etl/__init__.py etl/config.py etl/
+COPY etl/__init__.py etl/config.py etl/metric_windows.py etl/
 
 ENV ENV=production
 ENV PYTHONUNBUFFERED=1
