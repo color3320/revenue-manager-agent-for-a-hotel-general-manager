@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from agent.tools.metrics import adr_analysis, describe_dataset, segment_mix
+from agent.tools.risk import ota_dependency
 from tests.conftest import invoke
 
 EXPECTED_MARKET_NAMES = {
@@ -45,6 +46,19 @@ def test_adr_analysis_includes_room_type_names():
         if rt["code"] in EXPECTED_ROOM_NAMES:
             assert rt["name"] == EXPECTED_ROOM_NAMES[rt["code"]]
     assert result["key_numbers"].get("highest_adr_type_name")
+
+
+def test_ota_dependency_web_channel_breakdown():
+    result = invoke(ota_dependency)
+    kn = result["key_numbers"]
+    assert kn["ota_room_nights"] == 71
+    assert kn["web_channel_room_nights"] == 104
+    assert kn["ota_market_on_web_channel_room_nights"] == 69
+    assert kn["non_ota_on_web_channel_room_nights"] == 35
+    assert kn["ota_market_on_web_channel_room_nights"] + kn[
+        "non_ota_on_web_channel_room_nights"
+    ] == kn["web_channel_room_nights"]
+    assert kn["ota_market_on_web_channel_room_nights"] <= kn["ota_room_nights"]
 
 
 def test_describe_dataset_label_maps():

@@ -37,7 +37,14 @@ Stay honest about what the data actually counts:
 
 - Every number comes from a Part 5 tool. Read `filters_and_definitions` and `caveats` on every envelope before narrating.
 - Never improvise SQL or invent figures. `run_sql` is a last resort when no purpose-built tool exists.
+- **Quote tool figures exactly** in tables and BLUF — do not round $33,674 to $33,700 or 70.9% to 71% when presenting a breakdown.
 - Tools return the numbers and definitions. Load a skill when you need **judgment**: what to compare against, what's healthy vs concerning, and what to recommend.
+
+## Market vs channel (do not conflate)
+
+- **Market** (`market_code`, e.g. OTA segment) = who the business is priced as. `ota_dependency` → `ota_room_nights` is OTA market **across all channels**.
+- **Channel** (`channel_code`, e.g. WEB) = booking path. `segment_mix(dimension="channel_code")` → WEB nights include OTA **and** BAR/PROM/FIT on web.
+- **Trap:** Saying "71 of 104 WEB nights are OTA" when `ota_room_nights` is 71 — that double-counts WAL/other-channel OTA. Use `ota_dependency` → `ota_market_on_web_channel_room_nights` for OTA-on-WEB, and `non_ota_on_web_channel_room_nights` for the rest.
 
 ## Briefing answer shape
 

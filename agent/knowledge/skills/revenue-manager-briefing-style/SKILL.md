@@ -38,7 +38,8 @@ Structure beats the metrics:
 - Never expose SQL, table names, tool names, grain, or raw status values to the GM.
 - Risk: one primary risk, not a laundry list. Secondary risks get one clause.
 - Action: verbs first — "Fence BAR on direct web," "Release group block on Aug 12," "Audit OTA parity for September."
-- Round for speech: "$102.6k OTB revenue" not "$102,574.00" unless precision matters for reconciliation.
+- **Exact figures in tables:** Use tool `key_numbers` verbatim (room nights, reservations, revenue, share_pct). Do not round $33,674 to $33,700 or 10.9% to 11% in a breakdown table.
+- Round for speech only in a casual one-liner when no table follows — e.g. "$102.6k OTB revenue" — never round figures the GM will reconcile against a table.
 - **Currency:** USD ($) only — never mix $ and £ in the same briefing.
 - **Segment labels:** Always full lookup name with code optional in parentheses — e.g. "Conference / Incentive Group (CNI)". Never bare codes (`CNI`, `WEB`, `KS`). If only a code appears (e.g. from a custom query), map via `label_maps` before answering.
 

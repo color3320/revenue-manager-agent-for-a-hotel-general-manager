@@ -39,10 +39,14 @@ Load when the GM asks "are we too dependent on OTA?", "how's our direct mix?", o
 - ~15–20% OTA night share can still be fine if revenue share is lower and direct is growing; ~25%+ revenue share warrants action regardless of nights.
 - Rate parity: direct should be within ~5% of OTA landed rate — if REC share is low, parity or promo failure is the first suspect.
 - OTA market code ≠ WEB channel — corporate can book WEB; OTA segment can flow through multiple channels. Use both tools.
+- For WEB vs OTA split, use `ota_dependency` fields **`ota_market_on_web_channel_room_nights`** and **`non_ota_on_web_channel_room_nights`** — never reuse `ota_room_nights` as "OTA on WEB" (that total includes walk-in and other channels).
+- Quote exact figures from envelopes in tables; do not round tool dollars or counts.
 
 ## Trap
 
 **Equating `market_code = OTA` with `channel_code = WEB`.** Market is segment economics (who pays what rate); channel is booking path (who took the reservation). A hotel can have moderate OTA market share but high WEB channel share from non-OTA segments, or the reverse. Judge dependency with both dimensions.
+
+**Substituting `ota_room_nights` into a WEB-channel sentence.** Example failure: "104 WEB nights, 71 are OTA" when `ota_room_nights` = 71 (all channels) but `ota_market_on_web_channel_room_nights` = 69 and `non_ota_on_web_channel_room_nights` = 35. State each number with its correct label.
 
 ## Recommendation levers
 

@@ -50,6 +50,24 @@ def ota_dependency() -> dict:
             as_of,
         )
 
+        rev_col = revenue_column(RevenueMeasure.TOTAL)
+        web_sql = f"""
+        SELECT COALESCE(SUM(number_of_spaces), 0) AS web_room_nights,
+               COALESCE(SUM(CASE WHEN market_code = '{OTA_MARKET_CODE}'
+                                 THEN number_of_spaces ELSE 0 END), 0)
+                   AS ota_market_on_web_nights,
+               COALESCE(SUM(CASE WHEN market_code = '{OTA_MARKET_CODE}'
+                                 THEN {rev_col} ELSE 0 END), 0)
+                   AS ota_market_on_web_revenue
+        FROM {FACT_TABLE}
+        WHERE {where} AND channel_code = 'WEB'
+        """
+        web_row = fetch_all(conn, web_sql, p)[0]
+        web_nights = int(web_row["web_room_nights"])
+        ota_on_web_nights = int(web_row["ota_market_on_web_nights"])
+        ota_on_web_revenue = quantize_money(web_row["ota_market_on_web_revenue"])
+        non_ota_on_web_nights = web_nights - ota_on_web_nights
+
     nights_share = round(ota_nights / total_nights * 100, 2) if total_nights else 0.0
     revenue_share = (
         round(float(ota_revenue / total_revenue * 100), 2) if total_revenue > 0 else 0.0
@@ -71,6 +89,10 @@ def ota_dependency() -> dict:
             "total_revenue": float(total_revenue),
             "ota_share_pct_nights": nights_share,
             "ota_share_pct_revenue": revenue_share,
+            "web_channel_room_nights": web_nights,
+            "ota_market_on_web_channel_room_nights": ota_on_web_nights,
+            "non_ota_on_web_channel_room_nights": non_ota_on_web_nights,
+            "ota_market_on_web_channel_revenue": float(ota_on_web_revenue),
         },
         filters_and_definitions={
             "as_of_date": as_of,
@@ -79,8 +101,21 @@ def ota_dependency() -> dict:
             "revenue_field": revenue_column(RevenueMeasure.TOTAL),
             "cancelled_excluded": True,
             "ota_market_code": OTA_MARKET_CODE,
+            "ota_market_vs_web_channel": (
+                "ota_room_nights = OTA market across ALL channels. "
+                "web_channel_room_nights = WEB booking path (OTA + non-OTA markets). "
+                "Never substitute one for the other."
+            ),
         },
-        caveats=caveats or ["OTA defined as market_code = 'OTA'."],
+        caveats=(caveats or [])
+        + [
+            "OTA defined as market_code = 'OTA' (all channels).",
+            (
+                f"WEB channel has {web_nights} room nights total — "
+                f"{ota_on_web_nights} OTA-market + {non_ota_on_web_nights} non-OTA. "
+                f"Do not describe ota_room_nights ({ota_nights}) as a subset of WEB."
+            ),
+        ],
     )
 
 
