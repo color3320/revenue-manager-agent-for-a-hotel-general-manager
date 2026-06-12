@@ -20,6 +20,7 @@ try:
 except ImportError:
     pass
 
+from agent.config import agent_run_config
 from agent.graph import build_agent
 
 
@@ -192,7 +193,7 @@ def run_question(
 ) -> RunLog:
     """Invoke the agent for one question; optionally resume after HITL."""
     log = RunLog(question=question)
-    config = {"configurable": {"thread_id": thread_id or str(uuid7())}}
+    config = agent_run_config(thread_id or str(uuid7()))
 
     try:
         if resume_decisions is not None:

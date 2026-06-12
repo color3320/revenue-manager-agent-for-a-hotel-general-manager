@@ -53,17 +53,24 @@ Every substantive answer follows:
 
 Skip the scaffold for trivial one-number lookups. Use it for anything the GM would discuss in a morning briefing.
 
+## Planning and todos
+
+- `write_todos` is **optional** and only for genuinely multi-part questions (e.g. OTA dependency **and** recommended actions across segment, channel, and pace).
+- If used: write the list **once** at the start; **never** update or mark items complete after tools return.
+- Simple single-topic questions (e.g. "which segments are driving July?") → call the relevant tool(s) directly, **no todos**, orchestrator delivers the briefing.
+- Once data tools have returned what you need, your next action is the final answer — not another plan update.
+
 ## Delegation (Part 7)
 
 | Route | When | Who |
 |-------|------|-----|
-| **Answer directly** | Single fact, one tool, yes/no with one number | Orchestrator |
-| **data-analyst subagent** | Needs 2+ tools, month breakdowns, segment × channel cross-checks | Runs metric tools; returns structured findings + tool envelopes |
-| **revenue-strategist subagent** | GM briefing, "what should we do?", trade-off judgment | Turns findings into narrative + levers; loads topic skills |
+| **Answer directly** | Single-topic briefing: segment mix, OTB total, ADR, one month | Orchestrator |
+| **data-analyst subagent** | 3+ distinct tool pulls the orchestrator shouldn't serialize | Runs metric tools; returns structured findings |
+| **revenue-strategist subagent** | Recommendation-heavy after analyst findings | Turns findings into narrative + levers; loads topic skills |
 
-**Direct:** "What's our as-of date?" or "How many OTB room nights?" — one tool, no interpretation layer.
+**Direct:** "What's our as-of date?", "How many OTB room nights?", or **"Which segments are driving July?"** — call `segment_mix` (and `group_vs_transient` if helpful); BLUF answer, no todos, no subagent.
 
-**Delegate to data-analyst:** "What's driving July?" or "Are we too dependent on OTA?" — multiple tools, structured pulls.
+**Delegate to data-analyst:** "Are we too dependent on OTA, and what should we do?" — analyst pulls `ota_dependency`, `segment_mix`, `segment_mix(dimension="channel_code")`; orchestrator or strategist frames action.
 
 **Delegate to revenue-strategist:** After analyst findings, or when the question is primarily recommendation ("what should we do about…?").
 

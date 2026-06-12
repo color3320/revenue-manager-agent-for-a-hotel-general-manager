@@ -28,3 +28,11 @@ CHECKPOINT_DATABASE_URL: str | None = os.environ.get("CHECKPOINT_DATABASE_URL") 
 # HTTP basic auth for the public agent URL (Render deploy).
 BASIC_AUTH_USER: str | None = os.environ.get("BASIC_AUTH_USER")
 BASIC_AUTH_PASS: str | None = os.environ.get("BASIC_AUTH_PASS")
+
+# LangGraph step budget per turn (default 25 is tight when the model over-plans).
+AGENT_RECURSION_LIMIT: int = int(os.environ.get("AGENT_RECURSION_LIMIT", "40"))
+
+
+def agent_run_config(thread_id: str) -> dict:
+    """Shared invoke config for eval CLI and API streaming."""
+    return {"configurable": {"thread_id": thread_id}, "recursion_limit": AGENT_RECURSION_LIMIT}

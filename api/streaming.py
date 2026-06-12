@@ -56,7 +56,9 @@ async def stream_agent_events(
 ) -> AsyncIterator[str]:
     from langgraph.types import Command
 
-    config = {"configurable": {"thread_id": thread_id}}
+    from agent.config import agent_run_config
+
+    config = agent_run_config(thread_id)
 
     if resume_decisions is not None:
         graph_input = Command(resume={"decisions": resume_decisions})
